@@ -270,7 +270,8 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem var(--spacing-md);
+    padding: 0.1rem var(--spacing-sm);
+    max-width: 1400px;
 }
 
 .logo {
@@ -318,6 +319,17 @@ ul {
     font-size: 0.75rem;
     color: var(--primary-red);
     font-weight: 500;
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition-smooth);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 .nav-menu {
@@ -703,6 +715,24 @@ ul {
     transform: scale(1.05);
 }
 
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
 .floating-badge {
     position: absolute;
     bottom: 50px;
@@ -776,7 +806,7 @@ ul {
 .hero-slider {
     position: relative;
     height: 650px;
-    margin-top: 82px;
+    margin-top: 104px;
     overflow: hidden;
 }
 
@@ -1853,6 +1883,217 @@ ul {
 
     .admission-form {
         padding: 1.5rem;
+    }
+}
+
+/* ========================================
+   INTERNAL PAGES STYLES
+   ======================================== */
+.page-hero {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    color: var(--white);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: 80px;
+    /* Navbar height */
+}
+
+.page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.page-hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Identity Section */
+.identity-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+.identity-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-smooth);
+    border: 1px solid var(--medium-gray);
+}
+
+.identity-card.primary {
+    background: var(--gradient-blue);
+    color: var(--white);
+    border: none;
+}
+
+.identity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.identity-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.identity-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.identity-card p {
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* Institutional Redesign - Who We Are */
+.institutional-yellow-header {
+    background: #EBB800;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+}
+
+.header-text {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white);
+    margin: 0;
+}
+
+.who-we-are-modern {
+    padding: var(--spacing-xl) 0;
+    background: var(--white);
+}
+
+.modern-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.modern-text-col p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.root-card {
+    background: #F0F0F0;
+    border-radius: 40px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.root-panels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--white);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+.panel-img-container {
+    height: 400px;
+    overflow: hidden;
+}
+
+.panel-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.panel:hover img {
+    transform: scale(1.05);
+}
+
+.panel-caption {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--text-dark);
+}
+
+.panel-caption strong {
+    color: #333;
+}
+
+@media (max-width: 900px) {
+    .modern-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .root-panels {
+        grid-template-columns: 1fr;
+    }
+
+    .panel:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+.levels-section-internal {
+    padding: var(--spacing-xl) 0;
+}
+
+.levels-section-internal .identity-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .levels-section-internal .identity-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .identity-grid,
+    .levels-section-internal .identity-grid {
+        grid-template-columns: 1fr;
     }
 }
 
