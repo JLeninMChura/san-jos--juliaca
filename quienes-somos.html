@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body id="quienes-somos">
@@ -45,7 +46,16 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="quienes-somos.html" class="nav-link active">Nosotros</a></li>
-                <li><a href="propuesta-educativa.html" class="nav-link">Propuesta</a></li>
+                <li class="nav-item dropdown">
+                    <a href="propuesta-educativa.html" class="nav-link dropdown-toggle">Niveles Académicos <i
+                            class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="inicial.html">INICIAL</a></li>
+                        <li><a href="primaria.html">PRIMARIA</a></li>
+                        <li><a href="secundaria.html">SECUNDARIA</a></li>
+                        <li><a href="areas.html">ÁREAS</a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#admision" class="nav-link">Admisión</a></li>
                 <li><a href="#" class="nav-link btn-intranet">Intranet</a></li>
             </ul>
@@ -131,15 +141,73 @@
                 <div class="identity-card">
                     <div class="identity-icon">🎯</div>
                     <h3>Nuestra Misión</h3>
-                    <p>Brindar una educación integral de alta calidad, fundamentada en valores cristianos y excelencia
-                        académica, que permita a nuestros estudiantes ser líderes transformadores de la sociedad.</p>
+                    <p>Somos una institución educativa con
+                        responsabilidad social con una
+                        formación integral basada en el
+                        desarrollo personal, conciencia
+                        ambiental y con un alto nivel
+                        académico basado en una educación
+                        significativa para practicar la
+                        ciudadanía en el país. Somos una
+                        familia institucional, en búsqueda de
+                        la excelencia educativa y humana.</p>
                 </div>
                 <div class="identity-card primary">
                     <div class="identity-icon">👁️</div>
                     <h3>Nuestra Visión</h3>
-                    <p>Ser reconocidos como la institución educativa líder en la región por nuestra innovación
-                        pedagógica, formación ética y el compromiso constante con el éxito de cada uno de nuestros
-                        egresados.</p>
+                    <p>SeSer una Institución Educativa en la
+                        formación de líderes innovadores con
+                        un enfoque científico humanístico,
+                        ambiental y tecnológico, capaces de
+                        mejorar su entorno social.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hymns Section -->
+    <section class="hymns-section">
+        <div class="container">
+            <div class="hymns-grid">
+                <button onclick="openHymnModal('colegio')" class="hymn-btn">
+                    <span class="hymn-text">Himno – Colegio</span>
+                </button>
+                <button onclick="openHymnModal('juliaca')" class="hymn-btn">
+                    <span class="hymn-text">Himno – Juliaca</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hymn Modal -->
+    <div id="hymnModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeHymnModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <h2 class="partners-title">Nuestros Convenios</h2>
+            <div class="partners-grid">
+                <div class="partner-logo-item">
+                    <img src="img/convenio-1.png" alt="Convenio 1" class="partner-logo">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="img/convenio-2.png" alt="Convenio 2" class="partner-logo">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="img/convenio-3.png" alt="Convenio 3" class="partner-logo">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="img/convenio-4.png" alt="Convenio 4" class="partner-logo">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="img/convenio-5.png" alt="Convenio 5" class="partner-logo">
                 </div>
             </div>
         </div>
@@ -180,6 +248,39 @@
             </div>
         </div>
     </footer>
+
+    <!-- Virtual Assistant Chatbot -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-bot-info">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="bot-details">
+                        <span class="bot-name">Asistente San José</span>
+                        <span class="bot-status">En línea</span>
+                    </div>
+                </div>
+                <button id="close-chat" class="close-chat">&times;</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot">
+                    Hola 👋, soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+                </div>
+                <div class="chat-options">
+                    <button class="chat-option" data-answer="admision">¿Requisitos de Admisión?</button>
+                    <button class="chat-option" data-answer="niveles">¿Qué niveles tienen?</button>
+                    <button class="chat-option" data-answer="ubicacion">¿Dónde están ubicados?</button>
+                    <a href="https://wa.me/51910006323" target="_blank" class="chat-option whatsapp-opt">
+                        <i class="fab fa-whatsapp"></i> Hablar con un asesor
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button id="chatbot-trigger" class="chatbot-trigger">
+            <div class="bot-icon">🤖</div>
+            <div class="chat-badge">1</div>
+        </button>
+    </div>
 
     <script src="Script.js"></script>
 </body>

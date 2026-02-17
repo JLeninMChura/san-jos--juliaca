@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body id="propuesta">
@@ -45,7 +46,16 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="quienes-somos.html" class="nav-link">Nosotros</a></li>
-                <li><a href="propuesta-educativa.html" class="nav-link active">Propuesta</a></li>
+                <li class="nav-item dropdown">
+                    <a href="propuesta-educativa.html" class="nav-link active dropdown-toggle">Niveles Académicos <i
+                            class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="inicial.html">INICIAL</a></li>
+                        <li><a href="primaria.html">PRIMARIA</a></li>
+                        <li><a href="secundaria.html">SECUNDARIA</a></li>
+                        <li><a href="areas.html">ÁREAS</a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#admision" class="nav-link">Admisión</a></li>
                 <li><a href="#" class="nav-link btn-intranet">Intranet</a></li>
             </ul>
@@ -136,6 +146,39 @@
             </div>
         </div>
     </footer>
+
+    <!-- Virtual Assistant Chatbot -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-bot-info">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="bot-details">
+                        <span class="bot-name">Asistente San José</span>
+                        <span class="bot-status">En línea</span>
+                    </div>
+                </div>
+                <button id="close-chat" class="close-chat">&times;</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot">
+                    Hola 👋, soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+                </div>
+                <div class="chat-options">
+                    <button class="chat-option" data-answer="admision">¿Requisitos de Admisión?</button>
+                    <button class="chat-option" data-answer="niveles">¿Qué niveles tienen?</button>
+                    <button class="chat-option" data-answer="ubicacion">¿Dónde están ubicados?</button>
+                    <a href="https://wa.me/51910006323" target="_blank" class="chat-option whatsapp-opt">
+                        <i class="fab fa-whatsapp"></i> Hablar con un asesor
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button id="chatbot-trigger" class="chatbot-trigger">
+            <div class="bot-icon">🤖</div>
+            <div class="chat-badge">1</div>
+        </button>
+    </div>
 
     <script src="Script.js"></script>
 </body>

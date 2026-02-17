@@ -144,6 +144,9 @@ class Navigation {
         // Mobile menu toggle
         this.menuToggle.addEventListener('click', () => this.toggleMenu());
 
+        // Dropdown toggle for mobile
+        this.handleDropdownToggle();
+
         // Close menu when clicking on a link
         this.navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -177,6 +180,21 @@ class Navigation {
     closeMenu() {
         this.navMenu.classList.remove('active');
         this.menuToggle.classList.remove('active');
+        // Close any open mobile dropdowns
+        document.querySelectorAll('.nav-item.dropdown').forEach(drop => drop.classList.remove('active'));
+    }
+
+    handleDropdownToggle() {
+        const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
     }
 
     updateActiveLink(clickedLink) {
@@ -440,6 +458,170 @@ const debounce = (func, wait) => {
 };
 
 // ========================================
+// HYMN MODAL LOGIC
+// ========================================
+const hymnData = {
+    colegio: {
+        title: "Himno del Colegio",
+        chorus: "CORO",
+        chorusText: "Elena de Santa María\nnuestro Colegio sin igual;\nElena de Santa María\nseguimos fieles a tu ideal;\nsiempre seremos en gratitud,\nfaros perennes de la virtud.",
+        stanzas: [
+            {
+                num: "I",
+                text: "En tus aulas amado colegio\nnos enseñan la ciencia y virtud\ny nos place que noble y egregio\nresplandezcas por tu rectitud.\nNos instruyen y educan con tino,\nnuestras madres en diaria labor,\nmodelando con fuego divino\nnuestras almas sedientas de amor."
+            },
+            {
+                num: "II",
+                text: "Jubilosas cantamos la historia\nde tus sendas brillantes de luz,\ny queremos que aumente tu gloria\nnuestras vidas en pos de la Cruz.\nCon Jesús y María en las almas\nno tememos la saña infernal\nllegaremos portando las palmas\nA la Corte del Rey Celestial."
+            }
+        ],
+        authors: "Autora letra: Sor Rosa María Muñoz O.P.<br>Autora música: Madre Estela Rumi O.P."
+    },
+    juliaca: {
+        title: "Himno de Juliaca",
+        chorus: "CORO",
+        chorusText: "¡Oh! ciudad de los vientos, Juliaca,\nde los andes hermoso balcón,\nen tus manos la patria destaca,\ncomo un límpido y gran corazón.",
+        stanzas: [
+            {
+                num: "I",
+                text: "Cante el pueblo su himno de gloria\ncon el alma vibrante de fe,\nes Juliaca la luz de la historia\nque el destino en sus manos le dio.\nSu grandeza es el fruto bendito\nde su esfuerzo, su fe y su labor,\ntodo en ella es un himno infinito\nde esperanza, de paz y de amor."
+            },
+            {
+                num: "II",
+                text: "En tus pampas de sol y de frío\nel progreso levanta su altar,\ny en tus calles el noble gentío\ncanta un himno de fe sin igual.\nEres libre, Juliaca, y pujante\ncon el ritmo de tu actividad,\ntu camino es un reto vibrante\nde justicia, de paz y verdad."
+            }
+        ],
+        authors: "Letra: Luis Rodríguez Ortiz<br>Música: Jorge Rivera del Mar"
+    }
+};
+
+function openHymnModal(type) {
+    const modal = document.getElementById('hymnModal');
+    const modalBody = document.getElementById('modal-body');
+    const data = hymnData[type];
+
+    if (!data) return;
+
+    let html = `
+        <h2 class="hymn-modal-title">${data.title}</h2>
+        <div class="hymn-lyrics-container">
+            <div class="hymn-chorus">
+                <span class="hymn-stanza-num">${data.chorus}</span>
+                ${data.chorusText.replace(/\n/g, '<br>')}
+            </div>
+            ${data.stanzas.map(stanza => `
+                <div class="hymn-stanza">
+                    <span class="hymn-stanza-num">${stanza.num}</span>
+                    ${stanza.text.replace(/\n/g, '<br>')}
+                </div>
+            `).join('')}
+            <div class="hymn-authors">
+                ${data.authors}
+            </div>
+        </div>
+    `;
+
+    modalBody.innerHTML = html;
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Prevent scrolling
+}
+
+function closeHymnModal() {
+    const modal = document.getElementById('hymnModal');
+    modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Restore scrolling
+}
+
+// Event Listeners for Hymn Modal
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('hymnModal');
+    const closeBtn = document.querySelector('.close-modal');
+
+    if (closeBtn) {
+        closeBtn.onclick = closeHymnModal;
+    }
+
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            closeHymnModal();
+        }
+    };
+});
+
+/**
+ * VIRTUAL ASSISTANT CHATBOT (ROBOT)
+ */
+class ChatbotAssistant {
+    constructor() {
+        this.container = document.getElementById('chatbot-container');
+        if (!this.container) return;
+
+        this.trigger = document.getElementById('chatbot-trigger');
+        this.window = document.getElementById('chatbot-window');
+        this.closeBtn = document.getElementById('close-chat');
+        this.messagesArea = document.getElementById('chat-messages');
+        this.optionsContainer = this.messagesArea.querySelector('.chat-options');
+        this.badge = this.container.querySelector('.chat-badge');
+
+        this.faqData = {
+            admision: "¡Hola! El proceso de **Admisión 2026** ya está disponible. Contamos con vacantes para Inicial, Primaria y Secundaria. ¿Te gustaría agendar una visita o ver los requisitos?",
+            niveles: "En el San José Juliaca ofrecemos una formación integral en **Inicial**, **Primaria** y **Secundaria**, con talleres de robótica, música y deportes.",
+            ubicacion: "Nuesto colegio está ubicado en la ciudad de **Juliaca**. Atendemos consultas presenciales de lunes a viernes de 8:00 AM a 1:00 PM."
+        };
+
+        this.init();
+    }
+
+    init() {
+        this.trigger.addEventListener('click', () => this.toggleChat());
+        this.closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleChat(false);
+        });
+
+        // Setup FAQ options
+        const options = this.container.querySelectorAll('.chat-option[data-answer]');
+        options.forEach(opt => {
+            opt.addEventListener('click', () => {
+                const answerKey = opt.getAttribute('data-answer');
+                const questionText = opt.innerText;
+                this.handleUserAction(questionText, answerKey);
+            });
+        });
+    }
+
+    toggleChat(force) {
+        const isOpen = force !== undefined ? force : !this.window.classList.contains('active');
+        this.window.classList.toggle('active', isOpen);
+
+        if (isOpen) {
+            this.badge.style.display = 'none';
+        }
+    }
+
+    handleUserAction(question, answerKey) {
+        this.addMessage(question, 'user');
+
+        // Typing effect
+        setTimeout(() => {
+            this.addMessage(this.faqData[answerKey], 'bot');
+
+            // Bring options back to bottom
+            this.messagesArea.appendChild(this.optionsContainer);
+            this.messagesArea.scrollTop = this.messagesArea.scrollHeight;
+        }, 600);
+    }
+
+    addMessage(text, type) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${type}`;
+        msgDiv.innerHTML = text;
+        this.messagesArea.appendChild(msgDiv);
+        this.messagesArea.scrollTop = this.messagesArea.scrollHeight;
+    }
+}
+
+// ========================================
 // INITIALIZE ALL
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -451,6 +633,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new ScrollAnimations();
     new LazyLoader();
     new ParallaxEffect();
+    new ChatbotAssistant();
 
     // Add fade-in animation to hero content
     const heroContent = document.querySelector('.slide-content');

@@ -11,466 +11,512 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body id="inicio">
+    <!-- Refined Background Particles -->
+    <div class="bg-particles">
+        <div class="topography-lines"></div>
+        <!-- Sólidos -->
+        <div class="particle p-solid p1"></div>
+        <div class="particle p-solid p3"></div>
+        <div class="particle p-solid p6"></div>
+        <div class="particle p-dot d1"></div>
+        <div class="particle p-dot d2"></div>
+        <div class="particle p-dot d3"></div>
+        <!-- Outlines -->
+        <div class="particle p-outline o1"></div>
+        <div class="particle p-outline o2"></div>
+        <!-- Blurs for depth -->
+        <div class="particle p-blur b1"></div>
+        <div class="particle p-blur b2"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+            </div>
 
-    <body id="inicio">
-        <!-- Refined Background Particles -->
-        <div class="bg-particles">
-            <div class="topography-lines"></div>
-            <!-- Sólidos -->
-            <div class="particle p-solid p1"></div>
-            <div class="particle p-solid p3"></div>
-            <div class="particle p-solid p6"></div>
-            <div class="particle p-dot d1"></div>
-            <div class="particle p-dot d2"></div>
-            <div class="particle p-dot d3"></div>
-            <!-- Outlines -->
-            <div class="particle p-outline o1"></div>
-            <div class="particle p-outline o2"></div>
-            <!-- Blurs for depth -->
-            <div class="particle p-blur b1"></div>
-            <div class="particle p-blur b2"></div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li><a href="quienes-somos.html" class="nav-link">Nosotros</a></li>
+                <li class="nav-item dropdown">
+                    <a href="propuesta-educativa.html" class="nav-link dropdown-toggle">Niveles Académicos <i
+                            class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="inicial.html">INICIAL</a></li>
+                        <li><a href="primaria.html">PRIMARIA</a></li>
+                        <li><a href="secundaria.html">SECUNDARIA</a></li>
+                        <li><a href="areas.html">ÁREAS</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#admision" class="nav-link">Admisión</a></li>
+                <li><a href="https://www.sjj.edu.pe/intranet/login" class="nav-link btn-intranet">Intranet</a></li>
+            </ul>
         </div>
-        <!-- Navigation -->
-        <nav class="navbar" id="navbar">
-            <div class="container nav-container">
-                <div class="logo">
-                    <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
-                </div>
+    </nav>
 
-                <button class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
-                    <li><a href="quienes-somos.html" class="nav-link">Nosotros</a></li>
-                    <li><a href="propuesta-educativa.html" class="nav-link">Propuesta</a></li>
-                    <li><a href="index.html#admision" class="nav-link">Admisión</a></li>
-                    <li><a href="#" class="nav-link btn-intranet">Intranet</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <!-- Hero Slider -->
-        <section class="hero-slider" id="inicio">
-            <div class="slider-container">
-                <div class="slide active" style="background-image: url('img/LENIN.jpg.jpeg');">
-                    <div class="slide-overlay"></div>
-                    <div class="container">
-                        <div class="slide-content">
-                            <span class="slide-tag">Innovación Educativa</span>
-                            <h1 class="slide-title">Talleres extracurriculares</h1>
-                            <p class="slide-description">Una educación integral que potencia el talento de cada
-                                estudiante
-                            </p>
-                            <div class="slide-actions">
-                                <a href="#admision" class="btn btn-primary">Proceso de Admisión</a>
-                                <a href="#nosotros" class="btn btn-secondary">Conoce más</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide" style="background-image: url('img/LENIN2.jpg.jpeg');">
-                    <div class="slide-overlay"></div>
-                    <div class="container">
-                        <div class="slide-content">
-                            <span class="slide-tag">Excelencia Académica</span>
-                            <h1 class="slide-title">Educación de calidad internacional</h1>
-                            <p class="slide-description">Metodología moderna adaptada a los desafíos del siglo XXI</p>
-                            <div class="slide-actions">
-                                <a href="#niveles" class="btn btn-primary">Nuestros Niveles</a>
-                                <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide" style="background-image: url('img/LLLLLLLLLLLLLLL.jpg.jpeg');">
-                    <div class="slide-overlay"></div>
-                    <div class="container">
-                        <div class="slide-content">
-                            <span class="slide-tag">Infraestructura Moderna</span>
-                            <h1 class="slide-title">Instalaciones de primer nivel</h1>
-                            <p class="slide-description">Espacios diseñados para el aprendizaje y desarrollo integral
-                            </p>
-                            <div class="slide-actions">
-                                <a href="#nosotros" class="btn btn-primary">Ver más</a>
-                                <a href="#" class="btn btn-secondary">Tour virtual</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide" style="background-image: url('img/slide4.jpg');">
-                    <div class="slide-overlay"></div>
-                    <div class="container">
-                        <div class="slide-content">
-                            <span class="slide-tag">Desarrollo Integral</span>
-                            <h1 class="slide-title">Más que educación académica</h1>
-                            <p class="slide-description">Formación en valores, arte, deporte y tecnología</p>
-                            <div class="slide-actions">
-                                <a href="#niveles" class="btn btn-primary">Descubre más</a>
-                                <a href="#admision" class="btn btn-secondary">Únete a nosotros</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide" style="background-image: url('img/slide5.jpg');">
-                    <div class="slide-overlay"></div>
-                    <div class="container">
-                        <div class="slide-content">
-                            <span class="slide-tag">Comunidad Educativa</span>
-                            <h1 class="slide-title">Juntos construimos el mañana</h1>
-                            <p class="slide-description">Una familia comprometida con la excelencia educativa</p>
-                            <div class="slide-actions">
-                                <a href="#contacto" class="btn btn-primary">Contáctanos</a>
-                                <a href="#noticias" class="btn btn-secondary">Últimas noticias</a>
-                            </div>
+    <!-- Hero Slider -->
+    <section class="hero-slider" id="inicio">
+        <div class="slider-container">
+            <div class="slide active" style="background-image: url('img/LENIN.jpg.jpeg');">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-tag">NUEVA GENERACIÓN 2026</span>
+                        <h1 class="slide-title">Bienvenidos a la familia San José Juliaca</h1>
+                        <p class="slide-description">Formamos estudiantes con valores, excelencia académica y visión de
+                            futuro.
+                        </p>
+                        <div class="slide-actions">
+                            <a href="https://www.sjj.edu.pe/intranet/login" class="btn btn-primary">Proceso de
+                                Admisión</a>
+                            <a href="https://datacole2023.s3.amazonaws.com/talentosschool.edu.pe/document/2026/Enero/68a3053f5069665aa0b987d.pdf"
+                                class="btn btn-secondary">Conoce más</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <button class="slider-nav prev" id="prevSlide">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 18l-6-6 6-6" />
-                </svg>
-            </button>
-            <button class="slider-nav next" id="nextSlide">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 18l6-6-6-6" />
-                </svg>
-            </button>
-
-            <div class="slider-dots" id="sliderDots"></div>
-
-            <div class="scroll-indicator">
-                <span>Descubre más</span>
-                <div class="scroll-arrow"></div>
-            </div>
-        </section>
-
-        <!-- Motto Section -->
-        <section class="motto-section">
-            <div class="motto-bar"></div>
-            <div class="container">
-                <h2 class="motto-text">"Valores y conocimiento, para toda la vida"</h2>
-            </div>
-        </section>
-
-        <!-- Activities Section -->
-        <section class="activities-section" id="actividades">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Agenda Institucional</span>
-                    <h2 class="section-title">Actividades del Mes - Marzo</h2>
-                </div>
-
-                <div class="activities-grid">
-                    <!-- Highlight Column -->
-                    <div class="activities-highlight">
-                        <div class="highlight-content">
-                            <span class="highlight-badge">Evento Principal</span>
-                            <h3>Inicio del Año Escolar 2026</h3>
-                            <p>Bienvenidos a un nuevo año de aprendizajes y aventuras.</p>
-                            <a href="#contacto" class="btn btn-primary">Ver Calendario Completo</a>
-                        </div>
-                    </div>
-
-                    <!-- Events List Column -->
-                    <div class="activities-list">
-                        <!-- Event 1 -->
-                        <div class="activity-item">
-                            <div class="activity-date">
-                                <span class="date-day">02</span>
-                                <span class="date-month">MAR</span>
-                            </div>
-                            <div class="activity-info">
-                                <h4>Inicio de Clases - Secundaria</h4>
-                                <p>Hora de ingreso: 7:30 AM (Uniforme de gala)</p>
-                            </div>
-                        </div>
-
-                        <!-- Event 2 -->
-                        <div class="activity-item">
-                            <div class="activity-date">
-                                <span class="date-day">04</span>
-                                <span class="date-month">MAR</span>
-                            </div>
-                            <div class="activity-info">
-                                <h4>Inicio de Clases - Inicial y Primaria</h4>
-                                <p>Hora de ingreso: 8:00 AM (Buzo institucional)</p>
-                            </div>
-                        </div>
-
-                        <!-- Event 3 -->
-                        <div class="activity-item">
-                            <div class="activity-date">
-                                <span class="date-day">08</span>
-                                <span class="date-month">MAR</span>
-                            </div>
-                            <div class="activity-info">
-                                <h4>Día Internacional de la Mujer</h4>
-                                <p>Ceremonia especial y homenaje</p>
-                            </div>
-                        </div>
-
-                        <!-- Event 4 -->
-                        <div class="activity-item">
-                            <div class="activity-date">
-                                <span class="date-day">15</span>
-                                <span class="date-month">MAR</span>
-                            </div>
-                            <div class="activity-info">
-                                <h4>Primera Escuela de Padres</h4>
-                                <p>Tema: "Acompañando el aprendizaje desde casa"</p>
-                            </div>
-                        </div>
-
-                        <!-- Event 5 -->
-                        <div class="activity-item">
-                            <div class="activity-date">
-                                <span class="date-day">22</span>
-                                <span class="date-month">MAR</span>
-                            </div>
-                            <div class="activity-info">
-                                <h4>Día Mundial del Agua</h4>
-                                <p>Actividades de concientización ambiental</p>
-                            </div>
-                        </div>
-
-                        <!-- Event 6 -->
-                        <div class="activity-item">
-                            <div class="activity-date">
-                                <span class="date-day">28</span>
-                                <span class="date-month">MAR</span>
-                            </div>
-                            <div class="activity-info">
-                                <h4>Semana Santa</h4>
-                                <p>Jornada de reflexión espiritual</p>
-                            </div>
+            <div class="slide" style="background-image: url('img/LENIN2.jpg.jpeg');">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-tag">Nueva generación Sanjosefina</span>
+                        <h1 class="slide-title">Aquí comienza
+                            tu historia de
+                            éxito</h1>
+                        <p class="slide-description">Abrimos nuestras puertas a estudiantes que sueñan en grande y
+                            desean formarse con excelencia y valores.</p>
+                        <div class="slide-actions">
+                            <a href="#niveles" class="btn btn-primary">Nuestros Niveles</a>
+                            <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Why Choose Us Section -->
-        <section class="why-us-section" id="nosotros">
-            <div class="container">
-                <div class="why-us-grid">
-                    <!-- Content Column -->
-                    <div class="why-us-content">
-                        <span class="section-tag">Colegio San José Juliaca</span>
-                        <h2 class="section-title">¿Por qué elegir nuestra institución?</h2>
-                        <p class="section-description">Nos distinguimos por brindar una formación integral que combina
-                            la
-                            exigencia académica con valores humanos sólidos.</p>
-
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <div class="benefit-icon">🎓</div>
-                                <div class="benefit-text">
-                                    <h4>Excelencia Académica</h4>
-                                    <p>Programa curricular exigente y actualizado que garantiza el ingreso a las mejores
-                                        universidades.</p>
-                                </div>
-                            </div>
-
-                            <div class="benefit-item">
-                                <div class="benefit-icon">❤️</div>
-                                <div class="benefit-text">
-                                    <h4>Formación en Valores</h4>
-                                    <p>Fomentamos el respeto, la responsabilidad y la solidaridad como pilares de vida.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="benefit-item">
-                                <div class="benefit-icon">💻</div>
-                                <div class="benefit-text">
-                                    <h4>Innovación Tecnológica</h4>
-                                    <p>Aulas equipadas y metodología digital para el aprendizaje del siglo XXI.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a href="#admision" class="btn btn-primary">Postula con nosotros</a>
-                    </div>
-
-                    <!-- Image Column -->
-                    <div class="why-us-image-container">
-                        <div class="why-us-image video-wrapper">
-                            <iframe
-                                src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fcolegiosanjosejuliaca%2Fvideos%2F1231960148911025%2F&show_text=0&width=560"
-                                width="560" height="315" style="border:none;overflow:hidden" scrolling="no"
-                                frameborder="0" allowfullscreen="true"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                                allowFullScreen="true">
-                            </iframe>
+            <div class="slide" style="background-image: url('img/LLLLLLLLLLLLLLL.jpg.jpeg');">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-tag">Infraestructura Moderna</span>
+                        <h1 class="slide-title">Talleres extracurriculares</h1>
+                        <p class="slide-description">Espacios diseñados para el aprendizaje y desarrollo integral
+                        </p>
+                        <div class="slide-actions">
+                            <a href="#nosotros" class="btn btn-primary">Ver más</a>
+                            <a href="#" class="btn btn-secondary">Tour virtual</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="35">0</div>
-                        <div class="stat-label">Años de trayectoria</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="850">0</div>
-                        <div class="stat-label">Estudiantes</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="98">0</div>
-                        <div class="stat-label">% Satisfacción</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="45">0</div>
-                        <div class="stat-label">Docentes calificados</div>
+            <div class="slide" style="background-image: url('img/slide4.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-tag">Desarrollo Integral</span>
+                        <h1 class="slide-title">Más que educación académica</h1>
+                        <p class="slide-description">Formación en valores, arte, deporte y tecnología</p>
+                        <div class="slide-actions">
+                            <a href="#niveles" class="btn btn-primary">Descubre más</a>
+                            <a href="#admision" class="btn btn-secondary">Únete a nosotros</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
+            <div class="slide" style="background-image: url('img/slide5.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-tag">Comunidad Educativa</span>
+                        <h1 class="slide-title">Juntos construimos el mañana</h1>
+                        <p class="slide-description">Una familia comprometida con la excelencia educativa</p>
+                        <div class="slide-actions">
+                            <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+                            <a href="#noticias" class="btn btn-secondary">Últimas noticias</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <button class="slider-nav prev" id="prevSlide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </button>
+        <button class="slider-nav next" id="nextSlide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
+        </button>
 
+        <div class="slider-dots" id="sliderDots"></div>
 
+        <div class="scroll-indicator">
+            <span>Descubre más</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-        <!-- Admission Section -->
-        <section class="admission-section" id="admision">
-            <div class="admission-bg"></div>
-            <div class="container">
-                <div class="admission-content">
-                    <div class="admission-info">
-                        <span class="section-tag light">Admisión 2026</span>
-                        <h2>Únete a nuestra comunidad educativa</h2>
-                        <p>Inicia el proceso de admisión y forma parte de una institución comprometida con la excelencia
-                            educativa.</p>
+    <!-- Motto Section -->
+    <section class="motto-section">
+        <div class="motto-bar"></div>
+        <div class="container">
+            <h2 class="motto-text">"Valores y conocimiento, para toda la vida"</h2>
+        </div>
+    </section>
 
-                        <div class="admission-steps">
-                            <div class="step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>Solicita información</h4>
-                                    <p>Completa el formulario o contáctanos</p>
-                                </div>
+    <!-- Activities Section -->
+    <section class="activities-section" id="actividades">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Agenda Institucional</span>
+                <h2 class="section-title">Actividades del Mes - Marzo</h2>
+            </div>
+
+            <div class="activities-grid">
+                <!-- Highlight Column -->
+                <div class="activities-highlight">
+                    <div class="highlight-content">
+                        <span class="highlight-badge">Evento Principal</span>
+                        <h3>Inicio del Año Escolar 2026</h3>
+                        <p>Bienvenidos a un nuevo año de aprendizajes y aventuras.</p>
+                        <a href="#contacto" class="btn btn-primary">Ver Calendario Completo</a>
+                    </div>
+                </div>
+
+                <!-- Events List Column -->
+                <div class="activities-list">
+                    <!-- Event 1 -->
+                    <div class="activity-item">
+                        <div class="activity-date">
+                            <span class="date-day">02</span>
+                            <span class="date-month">MAR</span>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Inicio de Clases - Secundaria</h4>
+                            <p>Hora de ingreso: 7:30 AM (Uniforme de gala)</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="activity-item">
+                        <div class="activity-date">
+                            <span class="date-day">04</span>
+                            <span class="date-month">MAR</span>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Inicio de Clases - Inicial y Primaria</h4>
+                            <p>Hora de ingreso: 8:00 AM (Buzo institucional)</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="activity-item">
+                        <div class="activity-date">
+                            <span class="date-day">08</span>
+                            <span class="date-month">MAR</span>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Día Internacional de la Mujer</h4>
+                            <p>Ceremonia especial y homenaje</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 -->
+                    <div class="activity-item">
+                        <div class="activity-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">MAR</span>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Primera Escuela de Padres</h4>
+                            <p>Tema: "Acompañando el aprendizaje desde casa"</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 5 -->
+                    <div class="activity-item">
+                        <div class="activity-date">
+                            <span class="date-day">22</span>
+                            <span class="date-month">MAR</span>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Día Mundial del Agua</h4>
+                            <p>Actividades de concientización ambiental</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 6 -->
+                    <div class="activity-item">
+                        <div class="activity-date">
+                            <span class="date-day">28</span>
+                            <span class="date-month">MAR</span>
+                        </div>
+                        <div class="activity-info">
+                            <h4>Semana Santa</h4>
+                            <p>Jornada de reflexión espiritual</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us-section" id="nosotros">
+        <div class="container">
+            <div class="why-us-grid">
+                <!-- Content Column -->
+                <div class="why-us-content">
+                    <span class="section-tag">Colegio San José Juliaca</span>
+                    <h2 class="section-title">¿Por qué elegir nuestra institución?</h2>
+                    <p class="section-description">Nos distinguimos por brindar una formación integral que combina
+                        la
+                        exigencia académica con valores humanos sólidos.</p>
+
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🎓</div>
+                            <div class="benefit-text">
+                                <h4>Excelencia Académica</h4>
+                                <p>Programa curricular exigente y actualizado que garantiza el ingreso a las mejores
+                                    universidades.</p>
                             </div>
-                            <div class="step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>Evaluación</h4>
-                                    <p>Entrevista y evaluación del estudiante</p>
-                                </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">❤️</div>
+                            <div class="benefit-text">
+                                <h4>Formación en Valores</h4>
+                                <p>Fomentamos el respeto, la responsabilidad y la solidaridad como pilares de vida.
+                                </p>
                             </div>
-                            <div class="step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Matrícula</h4>
-                                    <p>Formaliza tu ingreso</p>
-                                </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💻</div>
+                            <div class="benefit-text">
+                                <h4>Innovación Tecnológica</h4>
+                                <p>Aulas equipadas y metodología digital para el aprendizaje del siglo XXI.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="admission-form">
-                        <h3>Solicita información</h3>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <input type="text" placeholder="Nombre completo" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Correo electrónico" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" placeholder="Teléfono" required>
-                            </div>
-                            <div class="form-group">
-                                <select required>
-                                    <option value="">Nivel de interés</option>
-                                    <option value="inicial">Inicial</option>
-                                    <option value="primaria">Primaria</option>
-                                    <option value="secundaria">Secundaria</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="Mensaje (opcional)" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-full">Enviar solicitud</button>
-                        </form>
+                    <a href="#admision" class="btn btn-primary">Postula con nosotros</a>
+                </div>
+
+                <!-- Image Column -->
+                <div class="why-us-image-container">
+                    <div class="why-us-image video-wrapper">
+                        <iframe
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fcolegiosanjosejuliaca%2Fvideos%2F1231960148911025%2F&show_text=0&width=560"
+                            width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                            allowFullScreen="true">
+                        </iframe>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="35">0</div>
+                    <div class="stat-label">Años de trayectoria</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="850">0</div>
+                    <div class="stat-label">Estudiantes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% Satisfacción</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="45">0</div>
+                    <div class="stat-label">Docentes calificados</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
 
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-col">
-                        <div class="footer-logo">
-                            <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+    <!-- Admission Section -->
+    <section class="admission-section" id="admision">
+        <div class="admission-bg"></div>
+        <div class="container">
+            <div class="admission-content">
+                <div class="admission-info">
+                    <span class="section-tag light">Admisión 2026</span>
+                    <h2>Únete a nuestra comunidad educativa</h2>
+                    <p>Inicia el proceso de admisión y forma parte de una institución comprometida con la excelencia
+                        educativa.</p>
+
+                    <div class="admission-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Solicita información</h4>
+                                <p>Completa el formulario o contáctanos</p>
+                            </div>
                         </div>
-                        <p>Formando líderes con valores y excelencia académica desde 1990.</p>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Enlaces rápidos</h4>
-                        <ul>
-                            <li><a href="#inicio">Inicio</a></li>
-                            <li><a href="#actividades">Actividades</a></li>
-                            <li><a href="#nosotros">Nosotros</a></li>
-                            <li><a href="#admision">Admisión</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Información</h4>
-                        <ul>
-                            <li><a href="#">Reglamento interno</a></li>
-                            <li><a href="#">Calendario académico</a></li>
-                            <li><a href="#">Libro de reclamaciones</a></li>
-                            <li><a href="#">Trabaja con nosotros</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Contacto</h4>
-                        <ul>
-                            <li>📍 Av. Principal 123, Juliaca</li>
-                            <li>📞 +51 951 234 567</li>
-                            <li>✉️ informes@tucolegio.edu.pe</li>
-                        </ul>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Evaluación</h4>
+                                <p>Entrevista y evaluación del estudiante</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Matrícula</h4>
+                                <p>Formaliza tu ingreso</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="footer-bottom">
-                    <p>&copy; 2026 Tu Colegio. Todos los derechos reservados.</p>
-                    <div class="footer-links">
-                        <a href="#">Política de privacidad</a>
-                        <a href="#">Términos y condiciones</a>
-                    </div>
+                <div class="admission-form">
+                    <h3>Solicita información</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Teléfono" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Nivel de interés</option>
+                                <option value="inicial">Inicial</option>
+                                <option value="primaria">Primaria</option>
+                                <option value="secundaria">Secundaria</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje (opcional)" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Enviar solicitud</button>
+                    </form>
                 </div>
             </div>
-        </footer>
+        </div>
+    </section>
 
-        <script src="Script.js"></script>
-    </body>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                    </div>
+                    <p>Formando líderes con valores y excelencia académica desde 1990.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#actividades">Actividades</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#admision">Admisión</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Reglamento interno</a></li>
+                        <li><a href="#">Calendario académico</a></li>
+                        <li><a href="#">Libro de reclamaciones</a></li>
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📍 Av. Principal 123, Juliaca</li>
+                        <li>📞 +51 951 234 567</li>
+                        <li>✉️ informes@tucolegio.edu.pe</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tu Colegio. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Términos y condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Virtual Assistant Chatbot -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-bot-info">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="bot-details">
+                        <span class="bot-name">Asistente San José</span>
+                        <span class="bot-status">En línea</span>
+                    </div>
+                </div>
+                <button id="close-chat" class="close-chat">&times;</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot">
+                    Hola 👋, soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+                </div>
+                <div class="chat-options">
+                    <button class="chat-option" data-answer="admision">¿Requisitos de Admisión?</button>
+                    <button class="chat-option" data-answer="niveles">¿Qué niveles tienen?</button>
+                    <button class="chat-option" data-answer="ubicacion">¿Dónde están ubicados?</button>
+                    <a href="https://wa.me/51910006323" target="_blank" class="chat-option whatsapp-opt">
+                        <i class="fab fa-whatsapp"></i> Hablar con un asesor
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button id="chatbot-trigger" class="chatbot-trigger">
+            <div class="bot-icon">🤖</div>
+            <div class="chat-badge">1</div>
+        </button>
+    </div>
+
+    <script src="Script.js"></script>
+</body>
 
 </html>
