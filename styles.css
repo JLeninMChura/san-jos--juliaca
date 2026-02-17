@@ -16,7 +16,7 @@
     --gradient-blue: linear-gradient(135deg, #0A2463 0%, #1e3a8a 100%);
     --gradient-red: linear-gradient(135deg, #D62828 0%, #ef4444 100%);
     --gradient-purple: linear-gradient(135deg, #7B2CBF 0%, #9d4edd 100%);
-    --gradient-overlay: linear-gradient(135deg, rgba(10, 36, 99, 0.6) 0%, rgba(214, 40, 40, 0.5) 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(10, 36, 99, 0.45) 0%, rgba(214, 40, 40, 0.35) 100%);
 
     /* Tipografía */
     --font-display: 'Sora', sans-serif;
@@ -81,7 +81,7 @@
 
 /* Estilo 1: Sólidos definidos */
 .p-solid {
-    opacity: 0.4;
+    opacity: 0.2;
     filter: none;
 }
 
@@ -100,7 +100,7 @@
 /* Estilo 4: Desenfoques de profundidad */
 .p-blur {
     filter: blur(60px);
-    opacity: 0.15;
+    opacity: 0.08;
 }
 
 /* Posiciones y colores específicos */
