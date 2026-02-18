@@ -130,11 +130,14 @@ class HeroSlider {
 class Navigation {
     constructor() {
         this.navbar = document.getElementById('navbar');
+        this.topBar = document.querySelector('.top-bar'); // New Top Bar
         this.menuToggle = document.getElementById('menuToggle');
         this.navMenu = document.getElementById('navMenu');
         this.navLinks = document.querySelectorAll('.nav-link');
 
-        this.init();
+        if (this.navbar && this.menuToggle && this.navMenu) {
+            this.init();
+        }
     }
 
     init() {
@@ -147,9 +150,14 @@ class Navigation {
         // Dropdown toggle for mobile
         this.handleDropdownToggle();
 
-        // Close menu when clicking on a link
+        // Close menu when clicking on a link (BUT NOT dropdown toggles)
         this.navLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // If it's a dropdown toggle, don't close the menu
+                if (link.classList.contains('dropdown-toggle')) {
+                    return;
+                }
+
                 if (window.innerWidth <= 1024) {
                     this.closeMenu();
                 }
@@ -162,10 +170,12 @@ class Navigation {
     }
 
     handleScroll() {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 50) {
             this.navbar.classList.add('scrolled');
+            if (this.topBar) this.topBar.classList.add('hidden');
         } else {
             this.navbar.classList.remove('scrolled');
+            if (this.topBar) this.topBar.classList.remove('hidden');
         }
 
         // Update active link based on scroll position
@@ -249,7 +259,9 @@ class StatsCounter {
         this.stats = document.querySelectorAll('.stat-number');
         this.animated = false;
 
-        this.init();
+        if (this.stats.length > 0) {
+            this.init();
+        }
     }
 
     init() {
@@ -301,6 +313,7 @@ class StatsCounter {
 class FormHandler {
     constructor() {
         this.form = document.getElementById('contactForm');
+        this.whatsappNumber = '51949373659'; // Número del colegio
 
         if (this.form) {
             this.init();
@@ -314,35 +327,40 @@ class FormHandler {
     handleSubmit(e) {
         e.preventDefault();
 
-        // Get form data
-        const formData = new FormData(this.form);
-        const data = Object.fromEntries(formData);
+        const nombre = this.form.querySelector('[name="nombre"]').value.trim();
+        const telefono = this.form.querySelector('[name="telefono"]').value.trim();
+        const alumno = this.form.querySelector('[name="alumno"]').value.trim();
+        const nivel = this.form.querySelector('[name="nivel"]').value;
+        const mensajeExtra = this.form.querySelector('[name="mensaje"]').value.trim();
 
-        // Simulate form submission
-        this.showLoading();
+        const mensaje =
+            `🏫 *Solicitud de Información - Colegio San José Juliaca*\n\n` +
+            `👤 *Apoderado:* ${nombre}\n` +
+            `📞 *Teléfono:* ${telefono}\n` +
+            `🎒 *Alumno:* ${alumno}\n` +
+            `📚 *Nivel de interés:* ${nivel}\n` +
+            (mensajeExtra ? `💬 *Mensaje:* ${mensajeExtra}\n` : '') +
+            `\n_Enviado desde el sitio web del Colegio San José Juliaca._`;
 
-        setTimeout(() => {
-            this.showSuccess();
-            this.form.reset();
-        }, 1500);
-    }
+        const url = `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
 
-    showLoading() {
+        // Feedback visual
         const submitBtn = this.form.querySelector('button[type="submit"]');
-        submitBtn.textContent = 'Enviando...';
+        submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Abriendo WhatsApp...';
         submitBtn.disabled = true;
-    }
-
-    showSuccess() {
-        const submitBtn = this.form.querySelector('button[type="submit"]');
-        submitBtn.textContent = '✓ Enviado';
-        submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
 
         setTimeout(() => {
-            submitBtn.textContent = 'Enviar solicitud';
-            submitBtn.disabled = false;
-            submitBtn.style.background = '';
-        }, 3000);
+            window.open(url, '_blank');
+            this.form.reset();
+            submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> ✓ ¡Listo!';
+            submitBtn.style.background = 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)';
+
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Enviar por WhatsApp';
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 3000);
+        }, 500);
     }
 }
 
@@ -351,36 +369,30 @@ class FormHandler {
 // ========================================
 class ScrollAnimations {
     constructor() {
-        this.animatedElements = document.querySelectorAll(
-            '.level-card, .news-card, .about-content, .feature-item'
-        );
+        this.revealElements = document.querySelectorAll('.reveal');
 
-        this.init();
+        if (this.revealElements.length > 0) {
+            this.init();
+        }
     }
 
     init() {
-        // Intersection Observer for scroll animations
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.1, // Lower threshold for better mobile detection
+            rootMargin: '0px 0px -50px 0px' // Tighter margin
         };
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, index * 100);
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('active');
+                    // We don't unobserve if we want animations to replay (optional)
+                    // observer.unobserve(entry.target); 
                 }
             });
         }, observerOptions);
 
-        this.animatedElements.forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        this.revealElements.forEach(element => {
             observer.observe(element);
         });
     }
@@ -462,20 +474,24 @@ const debounce = (func, wait) => {
 // ========================================
 const hymnData = {
     colegio: {
-        title: "Himno del Colegio",
-        chorus: "CORO",
-        chorusText: "Elena de Santa María\nnuestro Colegio sin igual;\nElena de Santa María\nseguimos fieles a tu ideal;\nsiempre seremos en gratitud,\nfaros perennes de la virtud.",
-        stanzas: [
+        title: "HIMNO AL COLEGIO SAN JOSÉ JULIACA",
+        sections: [
             {
-                num: "I",
-                text: "En tus aulas amado colegio\nnos enseñan la ciencia y virtud\ny nos place que noble y egregio\nresplandezcas por tu rectitud.\nNos instruyen y educan con tino,\nnuestras madres en diaria labor,\nmodelando con fuego divino\nnuestras almas sedientas de amor."
+                type: "stanza",
+                text: "En la perla del altiplano,\nHuaynaroque y ciudad de los vientos.\nEntonemos a nuestro colegio,\nQue enciende las luces de eterna lección."
             },
             {
-                num: "II",
-                text: "Jubilosas cantamos la historia\nde tus sendas brillantes de luz,\ny queremos que aumente tu gloria\nnuestras vidas en pos de la Cruz.\nCon Jesús y María en las almas\nno tememos la saña infernal\nllegaremos portando las palmas\nA la Corte del Rey Celestial."
+                type: "chorus",
+                label: "CORO:",
+                text: "San José Juliaca es el mejor,\nFormación integral y valores.\nEnseñando con sabiduría,\nCon ejemplo y laboriosidad.\n\nSan José Juliaca es innovación,\nCultivando aprendizaje y ciencia.\nEnseñando con sabiduría,\nCon ejemplo y la verdad."
+            },
+            {
+                type: "stanza",
+                label: "CODA:",
+                text: "Enseñando con sabiduría,\nCon ejemplo y la verdad."
             }
         ],
-        authors: "Autora letra: Sor Rosa María Muñoz O.P.<br>Autora música: Madre Estela Rumi O.P."
+        authors: "Letra y música:\nJulio César LEONARDOTURPO"
     },
     juliaca: {
         title: "Himno de Juliaca",
@@ -505,18 +521,25 @@ function openHymnModal(type) {
     let html = `
         <h2 class="hymn-modal-title">${data.title}</h2>
         <div class="hymn-lyrics-container">
-            <div class="hymn-chorus">
-                <span class="hymn-stanza-num">${data.chorus}</span>
-                ${data.chorusText.replace(/\n/g, '<br>')}
-            </div>
-            ${data.stanzas.map(stanza => `
-                <div class="hymn-stanza">
-                    <span class="hymn-stanza-num">${stanza.num}</span>
-                    ${stanza.text.replace(/\n/g, '<br>')}
+            ${data.sections ? data.sections.map(section => `
+                <div class="hymn-section ${section.type}">
+                    ${section.label ? `<span class="hymn-section-label">${section.label}</span>` : ''}
+                    <div class="hymn-text-block">${section.text.replace(/\n/g, '<br>')}</div>
                 </div>
-            `).join('')}
+            `).join('') : `
+                <div class="hymn-chorus">
+                    <span class="hymn-stanza-num">${data.chorus}</span>
+                    ${data.chorusText.replace(/\n/g, '<br>')}
+                </div>
+                ${data.stanzas.map(stanza => `
+                    <div class="hymn-stanza">
+                        <span class="hymn-stanza-num">${stanza.num}</span>
+                        ${stanza.text.replace(/\n/g, '<br>')}
+                    </div>
+                `).join('')}
+            `}
             <div class="hymn-authors">
-                ${data.authors}
+                ${data.authors.replace(/\n/g, '<br>')}
             </div>
         </div>
     `;
@@ -761,21 +784,160 @@ class InteractiveGallery {
     }
 }
 
+/**
+ * TESTIMONIALS CAROUSEL
+ */
+class TestimonialsCarousel {
+    constructor() {
+        this.track = document.getElementById('testimonialsTrack');
+        if (!this.track) return;
+
+        this.cards = Array.from(this.track.children);
+        this.nextBtn = document.getElementById('nextTestimonial');
+        this.prevBtn = document.getElementById('prevTestimonial');
+        this.dotsContainer = document.getElementById('testimonialDots');
+        this.currentIndex = 0;
+        this.autoplayInterval = null;
+        this.autoplayDelay = 5000; // 5 seconds
+
+        this.init();
+    }
+
+    init() {
+        if (!this.cards.length) return;
+
+        // Create dots
+        this.cards.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('testimonial-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                this.goToSlide(index);
+                this.resetAutoplay();
+            });
+            this.dotsContainer.appendChild(dot);
+        });
+
+        // Event listeners
+        this.nextBtn.addEventListener('click', () => {
+            this.nextSlide();
+            this.resetAutoplay();
+        });
+        this.prevBtn.addEventListener('click', () => {
+            this.prevSlide();
+            this.resetAutoplay();
+        });
+
+        // Swipe support
+        this.addTouchEvents();
+
+        // Start autoplay
+        this.startAutoplay();
+
+        // Pause on hover
+        const container = document.querySelector('.testimonials-carousel-container');
+        container.addEventListener('mouseenter', () => this.stopAutoplay());
+        container.addEventListener('mouseleave', () => this.startAutoplay());
+    }
+
+    goToSlide(index) {
+        this.currentIndex = index;
+        const cardWidth = this.cards[0].offsetWidth;
+        const gap = 30; // Matches CSS gap
+        const offset = -this.currentIndex * (cardWidth + gap);
+
+        this.track.style.transform = `translateX(${offset}px)`;
+
+        // Update dots
+        const dots = Array.from(this.dotsContainer.children);
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === this.currentIndex);
+        });
+    }
+
+    nextSlide() {
+        // Only slide if there are more cards to show
+        const visibleCards = window.innerWidth > 1024 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+        if (this.currentIndex < this.cards.length - visibleCards) {
+            this.currentIndex++;
+        } else {
+            this.currentIndex = 0; // Loop back
+        }
+        this.goToSlide(this.currentIndex);
+    }
+
+    prevSlide() {
+        const visibleCards = window.innerWidth > 1024 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+        } else {
+            this.currentIndex = this.cards.length - visibleCards; // Go to end
+        }
+        this.goToSlide(this.currentIndex);
+    }
+
+    startAutoplay() {
+        this.stopAutoplay();
+        this.autoplayInterval = setInterval(() => {
+            this.nextSlide();
+        }, this.autoplayDelay);
+    }
+
+    stopAutoplay() {
+        if (this.autoplayInterval) {
+            clearInterval(this.autoplayInterval);
+            this.autoplayInterval = null;
+        }
+    }
+
+    resetAutoplay() {
+        this.stopAutoplay();
+        this.startAutoplay();
+    }
+
+    addTouchEvents() {
+        let startX = 0;
+        let endX = 0;
+
+        this.track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        this.track.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) this.nextSlide();
+                else this.prevSlide();
+                this.resetAutoplay();
+            }
+        }, { passive: true });
+    }
+}
+
 // ========================================
 // INITIALIZE ALL
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
-    new HeroSlider();
-    new Navigation();
-    new StatsCounter();
-    new FormHandler();
-    new ScrollAnimations();
-    new LazyLoader();
-    new ParallaxEffect();
-    new ChatbotAssistant();
-    new RegistrationModal();
-    new InteractiveGallery();
+    const initComponent = (ComponentClass) => {
+        try {
+            new ComponentClass();
+        } catch (e) {
+            console.warn(`Error initializing ${ComponentClass.name}:`, e.message);
+        }
+    };
+
+    initComponent(HeroSlider);
+    initComponent(Navigation);
+    initComponent(StatsCounter);
+    initComponent(FormHandler);
+    initComponent(ScrollAnimations);
+    initComponent(LazyLoader);
+    initComponent(ParallaxEffect);
+    initComponent(ChatbotAssistant);
+    initComponent(RegistrationModal);
+    initComponent(InteractiveGallery);
 
     // Add fade-in animation to hero content
     const heroContent = document.querySelector('.slide-content');
@@ -810,7 +972,15 @@ window.addEventListener('load', () => {
     }
 
     // Remove loading states
-    document.body.classList.add('loaded');
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('preloader-hidden');
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+        }, 800);
+    } else {
+        document.body.classList.add('loaded');
+    }
 });
 
 // ========================================

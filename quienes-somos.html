@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Quiénes Somos? | Colegio San José Juliaca</title>
+    <link rel="icon" href="img/LOGO PRINCIPAL.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,13 @@
 </head>
 
 <body id="quienes-somos">
+    <!-- Page Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo" class="preloader-logo">
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
     <!-- Refined Background Particles -->
     <div class="bg-particles">
         <div class="topography-lines"></div>
@@ -28,6 +36,29 @@
         <div class="particle p-outline o2"></div>
         <div class="particle p-blur b1"></div>
         <div class="particle p-blur b2"></div>
+    </div>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i> 949 373 659
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-envelope"></i> colegiosanjosejuliaca@gmail.com
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-map-marker-alt"></i> Jr. Gonzales Prada Nº 433
+                </div>
+            </div>
+            <div class="top-bar-socials">
+                <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -56,7 +87,9 @@
                         <li><a href="areas.html">ÁREAS</a></li>
                     </ul>
                 </li>
-                <li><a href="index.html#admision" class="nav-link">Admisión</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="https://www.sjj.edu.pe/web/preinscripcion" class="nav-link btn-admision-cta"
+                        target="_blank">Admisión 2026</a></li>
                 <li><a href="#" class="nav-link btn-intranet">Intranet</a></li>
             </ul>
         </div>
@@ -72,7 +105,7 @@
     </header>
 
     <!-- Custom Section Header (Yellow/Gold) -->
-    <div class="institutional-yellow-header">
+    <div class="institutional-yellow-header reveal">
         <div class="container header-flex">
             <div class="header-icon">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
@@ -85,50 +118,22 @@
     </div>
 
     <!-- Restructured Who We Are -->
-    <section class="who-we-are-modern">
+    <section class="who-we-are-modern reveal">
         <div class="container modern-grid">
-            <div class="modern-text-col">
-                <p>Somos la I.E.P. San José Juliaca, una institución que ofrece una educación integral
-                    orientada a formar estudiantes conscientes, responsables y comprometidos con el
-                    Promovemos el pensamiento crítico, la convivencia, el cuidado del entorno, la igualdad
-                    de oportunidades y el espíritu de superación, preparando a nuestros estudiantes para
-                    enfrentar los retos actuales con liderazgo y sentido humano.</p>
+            <div class="modern-text-col reveal reveal-left">
+                <p>Somos la I.E.P. San José Juliaca, una institución que ofrece una educación integral orientado a
+                    formar estudiantes conscientes, responsables y comprometidos con el desarrollo personal y colectivo.
+                    Promovemos el pensamiento crítico, la convivencia, el cuidado del entorno, la igualdad de
+                    oportunidades y el espíritu de superación, preparando a nuestros estudiantes para enfrentar los
+                    retos actuales con liderazgo y sentido humano.</p>
             </div>
 
-            <div class="modern-card-col">
-                <div class="root-card">
-                    <div class="root-panels">
-                        <div class="panel">
-                            <div class="panel-img-container">
-                                <img src="https://images.unsplash.com/photo-1548695130-99c9c4c7c8ef?q=80&w=600&auto=format&fit=crop"
-                                    alt="Santo Domingo">
-                            </div>
-                            <div class="panel-caption">
-                                <p>Somos una <strong>comunidad dominicana</strong>. Nuestro padre Santo Domingo de
-                                    Guzmán.</p>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-img-container">
-                                <img src="https://images.unsplash.com/photo-1519818129995-bb049753c847?q=80&w=600&auto=format&fit=crop"
-                                    alt="Santa María Magdalena">
-                            </div>
-                            <div class="panel-caption">
-                                <p>Nuestra patrona <strong>Santa María Magdalena</strong>. Mensajera de la resurrección.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-img-container">
-                                <img src="https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=600&auto=format&fit=crop"
-                                    alt="Hermanas Dominicas">
-                            </div>
-                            <div class="panel-caption">
-                                <p>Nuestras <strong>raíces son alemanas</strong>, nos constituimos en la ciudad de
-                                    Speyer.</p>
-                            </div>
-                        </div>
+            <div class="modern-card-col reveal reveal-right">
+                <div class="director-card">
+                    <div class="director-img-container">
+                        <img src="img/nosotros/directora.jpg" alt="Directora Colegio San José">
                     </div>
+                    <div class="director-badge">Lic. Gloria Merma Yucra</div>
                 </div>
             </div>
         </div>
@@ -136,30 +141,21 @@
 
     <!-- Mission & Vision Section -->
     <section class="identity-section">
-        <div class="container">
+        <div class="container reveal">
             <div class="identity-grid">
-                <div class="identity-card">
+                <div class="identity-card reveal reveal-left">
                     <div class="identity-icon">🎯</div>
                     <h3>Nuestra Misión</h3>
-                    <p>Somos una institución educativa con
-                        responsabilidad social con una
-                        formación integral basada en el
-                        desarrollo personal, conciencia
-                        ambiental y con un alto nivel
-                        académico basado en una educación
-                        significativa para practicar la
-                        ciudadanía en el país. Somos una
-                        familia institucional, en búsqueda de
-                        la excelencia educativa y humana.</p>
+                    <p>Somos una institución educativa con responsabilidad social con una formación integral basada en
+                        el desarrollo personal, conciencia ambiental y con un alto nivel académico basado en una
+                        educación significativa para practicar la ciudadanía en el país. Somos una familia
+                        institucional, en búsqueda de la excelencia educativa y humana.</p>
                 </div>
-                <div class="identity-card primary">
+                <div class="identity-card primary reveal reveal-right">
                     <div class="identity-icon">👁️</div>
                     <h3>Nuestra Visión</h3>
-                    <p>SeSer una Institución Educativa en la
-                        formación de líderes innovadores con
-                        un enfoque científico humanístico,
-                        ambiental y tecnológico, capaces de
-                        mejorar su entorno social.</p>
+                    <p>Ser una Institución Educativa en la formación de líderes innovadores con un enfoque científico
+                        humanístico, ambiental y tecnológico, capaces de mejorar su entorno social.</p>
                 </div>
             </div>
         </div>
@@ -189,7 +185,141 @@
         </div>
     </div>
 
-    <!-- Partners Section -->
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <span class="section-tag">Voces Josefinas</span>
+                <h2 class="section-title">Nuestros Testimonios</h2>
+                <p class="section-subtitle">Lo que dicen los padres de familia y alumnos sobre su experiencia en San
+                    José.</p>
+            </div>
+
+            <div class="testimonials-marquee-container">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Original Set -->
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"La exigencia académica y la formación en valores del Colegio San
+                            José han sido fundamentales para el desarrollo de mis hijos. Realmente se nota el
+                            liderazgo."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Familia Quispe Mamani</strong>
+                                <span>Padres de Familia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Como alumno de secundaria, valoro mucho los talleres de debate. Me
+                            han ayudado a ganar confianza y a expresar mis ideas con claridad y respeto."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Marco Antonio L.</strong>
+                                <span>Alumno de 5to Secundaria</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"La atención de los profesores y el ambiente de seguridad nos dan la
+                            tranquilidad de saber que nuestra hija está en el mejor lugar para aprender."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Sra. Carmen Rosa V.</strong>
+                                <span>Madre de Familia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Egresé hace dos años y la base en ciencias y matemáticas que recibí
+                            en el San José me ha permitido destacar en mi carrera universitaria. Siempre agradecido."
+                        </p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Daniel Eduardo S.</strong>
+                                <span>Ex-alumno</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Un colegio que no solo educa la mente, sino también el corazón. Mis
+                            hijos son personas íntegras gracias a la comunidad Josefina."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Dr. Ricardo C.</strong>
+                                <span>Padre de Familia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"La exigencia académica y la formación en valores del Colegio San
+                            José han sido fundamentales para el desarrollo de mis hijos. Realmente se nota el
+                            liderazgo."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Familia Quispe Mamani</strong>
+                                <span>Padres de Familia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Como alumno de secundaria, valoro mucho los talleres de debate. Me
+                            han ayudado a ganar confianza y a expresar mis ideas con claridad y respeto."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Marco Antonio L.</strong>
+                                <span>Alumno de 5to Secundaria</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"La atención de los profesores y el ambiente de seguridad nos dan la
+                            tranquilidad de saber que nuestra hija está en el mejor lugar para aprender."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Sra. Carmen Rosa V.</strong>
+                                <span>Madre de Familia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Egresé hace dos años y la base en ciencias y matemáticas que recibí
+                            en el San José me ha permitido destacar en mi carrera universitaria. Siempre agradecido."
+                        </p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Daniel Eduardo S.</strong>
+                                <span>Ex-alumno</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Un colegio que no solo educa la mente, sino también el corazón. Mis
+                            hijos son personas íntegras gracias a la comunidad Josefina."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Dr. Ricardo C.</strong>
+                                <span>Padre de Familia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="partners-section">
         <div class="container">
             <h2 class="partners-title">Nuestros Convenios</h2>
@@ -213,52 +343,77 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Modern Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Branding Column -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                        <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo">
                     </div>
-                    <p>Formando líderes con valores y excelencia académica desde 1990.</p>
+                    <p>Formando líderes con valores y excelencia académica en la ciudad de Juliaca desde 1990.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/51949373659" class="social-icon" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
 
+                <!-- Academic Column -->
                 <div class="footer-col">
-                    <h4>Enlaces rápidos</h4>
+                    <h4>Niveles</h4>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html#actividades">Actividades</a></li>
-                        <li><a href="quienes-somos.html" class="active">Nosotros</a></li>
-                        <li><a href="index.html#admision">Admisión</a></li>
+                        <li><a href="inicial.html">Nivel Inicial</a></li>
+                        <li><a href="primaria.html">Nivel Primaria</a></li>
+                        <li><a href="secundaria.html">Nivel Secundaria</a></li>
+                        <li><a href="propuesta-educativa.html">Resumen Académico</a></li>
                     </ul>
                 </div>
 
+                <!-- Quick Links Column -->
                 <div class="footer-col">
-                    <h4>Información</h4>
+                    <h4>Institución</h4>
                     <ul>
-                        <li><a href="#">Reglamento interno</a></li>
-                        <li><a href="#">Calendario académico</a></li>
-                        <li><a href="#">Libro de reclamaciones</a></li>
-                        <li><a href="#">Trabaja con nosotros</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="index.html#admision">Admisión 2026</a></li>
+                        <li><a href="#">Calendario Escolar</a></li>
+                        <li><a href="#">Intranet Familiar</a></li>
                     </ul>
                 </div>
 
+                <!-- Contact & Map Column -->
                 <div class="footer-col">
                     <h4>Contacto</h4>
-                    <ul>
-                        <li>📍 Av. Principal 123, Juliaca</li>
-                        <li>📞 +51 910 006 323</li>
-                        <li>✉️ informes@sjj.edu.pe</li>
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Principal 123, Juliaca, Puno, Perú</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+51 949 373 659</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>informes@sjj.edu.pe</span>
+                        </li>
                     </ul>
+                    <div class="mini-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1912.261276008!2d-70.1345842!3d-15.4951478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9167f3c6a4618751%3A0x6790dcfc5f9630c8!2sColegio%20San%20Jos%C3%A9!5e0!3m2!1ses-419!2spe!4v1700000000000!5m2!1ses-419!2spe"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Colegio San José Juliaca. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Colegio San José Juliaca. Excelencia que trasciende.</p>
                 <div class="footer-links">
-                    <a href="#">Política de privacidad</a>
-                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Libro de Reclamaciones</a>
+                    <a href="#">Política de Privacidad</a>
                 </div>
             </div>
         </div>
@@ -285,7 +440,7 @@
                     <button class="chat-option" data-answer="admision">¿Requisitos de Admisión?</button>
                     <button class="chat-option" data-answer="niveles">¿Qué niveles tienen?</button>
                     <button class="chat-option" data-answer="ubicacion">¿Dónde están ubicados?</button>
-                    <a href="https://wa.me/51910006323" target="_blank" class="chat-option whatsapp-opt">
+                    <a href="https://wa.me/51949373659" target="_blank" class="chat-option whatsapp-opt">
                         <i class="fab fa-whatsapp"></i> Hablar con un asesor
                     </a>
                 </div>
@@ -302,7 +457,7 @@
         <div class="registration-modal-content">
             <span class="close-registration-modal" id="closeRegistrationModal">&times;</span>
             <img src="img/matrícula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
-            <a href="https://wa.me/51910006323?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
+            <a href="https://wa.me/51949373659?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
                 target="_blank" class="registration-btn">
                 <i class="fab fa-whatsapp"></i> Más información
             </a>

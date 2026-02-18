@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nivel Inicial - Colegio San José Juliaca</title>
+    <link rel="icon" href="img/LOGO PRINCIPAL.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,13 @@
 </head>
 
 <body id="inicio" class="nivel-inicial">
+    <!-- Page Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo" class="preloader-logo">
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
     <!-- Refined Background Particles -->
     <div class="bg-particles">
         <div class="topography-lines"></div>
@@ -26,6 +34,29 @@
         <div class="particle p-dot d3"></div>
         <div class="particle p-outline o1"></div>
         <div class="particle p-outline o2"></div>
+    </div>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i> 949 373 659
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-envelope"></i> colegiosanjosejuliaca@gmail.com
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-map-marker-alt"></i> Jr. Gonzales Prada Nº 433
+                </div>
+            </div>
+            <div class="top-bar-socials">
+                <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -54,7 +85,9 @@
                         <li><a href="areas.html">ÁREAS</a></li>
                     </ul>
                 </li>
-                <li><a href="index.html#admision" class="nav-link">Admisión</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="https://www.sjj.edu.pe/web/preinscripcion" class="nav-link btn-admision-cta"
+                        target="_blank">Admisión 2026</a></li>
                 <li><a href="https://www.sjj.edu.pe/intranet/login" class="nav-link btn-intranet">Intranet</a></li>
             </ul>
         </div>
@@ -356,56 +389,84 @@
                 <p>Las vacantes para el Nivel Inicial 2026 son limitadas. ¡Asegura su futuro hoy!</p>
                 <div class="cta-buttons">
                     <a href="index.html#admision" class="btn btn-primary btn-large">Postula Ahora</a>
-                    <a href="https://wa.me/51910006323" class="btn btn-whatsapp-large"><i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/51949373659" class="btn btn-whatsapp-large"><i class="fab fa-whatsapp"></i>
                         Hablar con informes</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Modern Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Branding Column -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                        <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo">
                     </div>
-                    <p>Formando líderes con valores y excelencia académica desde 1990.</p>
+                    <p>Formando líderes con valores y excelencia académica en la ciudad de Juliaca desde 1990.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/51949373659" class="social-icon" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
+
+                <!-- Academic Column -->
                 <div class="footer-col">
-                    <h4>Enlaces rápidos</h4>
+                    <h4>Niveles</h4>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html#actividades">Actividades</a></li>
-                        <li><a href="quienes-somos.html">Nosotros</a></li>
-                        <li><a href="index.html#admision">Admisión</a></li>
+                        <li><a href="inicial.html">Nivel Inicial</a></li>
+                        <li><a href="primaria.html">Nivel Primaria</a></li>
+                        <li><a href="secundaria.html">Nivel Secundaria</a></li>
+                        <li><a href="propuesta-educativa.html">Resumen Académico</a></li>
                     </ul>
                 </div>
+
+                <!-- Quick Links Column -->
                 <div class="footer-col">
-                    <h4>Información</h4>
+                    <h4>Institución</h4>
                     <ul>
-                        <li><a href="#">Reglamento interno</a></li>
-                        <li><a href="#">Calendario académico</a></li>
-                        <li><a href="#">Libro de reclamaciones</a></li>
-                        <li><a href="#">Trabaja con nosotros</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="index.html#admision">Admisión 2026</a></li>
+                        <li><a href="#">Calendario Escolar</a></li>
+                        <li><a href="#">Intranet Familiar</a></li>
                     </ul>
                 </div>
+
+                <!-- Contact & Map Column -->
                 <div class="footer-col">
                     <h4>Contacto</h4>
-                    <ul>
-                        <li>📍 Av. Principal 123, Juliaca</li>
-                        <li>📞 +51 910 006 323</li>
-                        <li>✉️ informes@sjj.edu.pe</li>
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Principal 123, Juliaca, Puno, Perú</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+51 949 373 659</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>informes@sjj.edu.pe</span>
+                        </li>
                     </ul>
+                    <div class="mini-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1912.261276008!2d-70.1345842!3d-15.4951478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9167f3c6a4618751%3A0x6790dcfc5f9630c8!2sColegio%20San%20Jos%C3%A9!5e0!3m2!1ses-419!2spe!4v1700000000000!5m2!1ses-419!2spe"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Colegio San José Juliaca. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Colegio San José Juliaca. Excelencia que trasciende.</p>
                 <div class="footer-links">
-                    <a href="#">Política de privacidad</a>
-                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Libro de Reclamaciones</a>
+                    <a href="#">Política de Privacidad</a>
                 </div>
             </div>
         </div>
@@ -432,7 +493,7 @@
                     <button class="chat-option" data-answer="admision">¿Requisitos de Admisión?</button>
                     <button class="chat-option" data-answer="niveles">¿Qué niveles tienen?</button>
                     <button class="chat-option" data-answer="ubicacion">¿Dónde están ubicados?</button>
-                    <a href="https://wa.me/51910006323" target="_blank" class="chat-option whatsapp-opt">
+                    <a href="https://wa.me/51949373659" target="_blank" class="chat-option whatsapp-opt">
                         <i class="fab fa-whatsapp"></i> Hablar con un asesor
                     </a>
                 </div>
@@ -449,7 +510,7 @@
         <div class="registration-modal-content">
             <span class="close-registration-modal" id="closeRegistrationModal">&times;</span>
             <img src="img/matrícula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
-            <a href="https://wa.me/51910006323?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
+            <a href="https://wa.me/51949373659?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
                 target="_blank" class="registration-btn">
                 <i class="fab fa-whatsapp"></i> Más información
             </a>

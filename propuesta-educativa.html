@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta Educativa | Colegio San José Juliaca</title>
+    <title>Niveles Académicos | Colegio San José Juliaca</title>
+    <link rel="icon" href="img/LOGO PRINCIPAL.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,13 @@
 </head>
 
 <body id="propuesta">
+    <!-- Page Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo" class="preloader-logo">
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
     <!-- Refined Background Particles -->
     <div class="bg-particles">
         <div class="topography-lines"></div>
@@ -28,6 +36,29 @@
         <div class="particle p-outline o2"></div>
         <div class="particle p-blur b1"></div>
         <div class="particle p-blur b2"></div>
+    </div>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i> 949 373 659
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-envelope"></i> colegiosanjosejuliaca@gmail.com
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-map-marker-alt"></i> Jr. Gonzales Prada Nº 433
+                </div>
+            </div>
+            <div class="top-bar-socials">
+                <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -56,7 +87,9 @@
                         <li><a href="areas.html">ÁREAS</a></li>
                     </ul>
                 </li>
-                <li><a href="index.html#admision" class="nav-link">Admisión</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="https://www.sjj.edu.pe/web/preinscripcion" class="nav-link btn-admision-cta"
+                        target="_blank">Admisión 2026</a></li>
                 <li><a href="#" class="nav-link btn-intranet">Intranet</a></li>
             </ul>
         </div>
@@ -64,85 +97,147 @@
 
     <!-- Page Hero -->
     <header class="page-hero"
-        style="background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.85)), url('img/photo\ principal.jpg');">
+        style="background-image: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.85)), url('img/photo principal.jpg');">
         <div class="container">
-            <h1 class="fade-in-up">Propuesta Educativa</h1>
-            <p class="fade-in-up">Innovación, valores y excelencia para formar los líderes del mañana.</p>
+            <h1 class="fade-in-up">Niveles Académicos</h1>
+            <p class="fade-in-up">Formación integral desde los primeros pasos hasta la preparación universitaria.</p>
         </div>
     </header>
 
-    <!-- Methodology Section -->
-    <section class="methodology-section">
+    <!-- Levels Content Section -->
+    <section class="levels-summary-section">
         <div class="container">
-            <div class="section-header centered">
-                <span class="section-tag">Aprendizaje</span>
-                <h2 class="section-title">Nuestra Metodología</h2>
-            </div>
-            <div class="identity-grid">
-                <div class="identity-card">
-                    <div class="identity-icon">🧠</div>
-                    <h3>Aprendizaje Activo</h3>
-                    <p>Fomentamos la curiosidad y la participación directa del estudiante en su proceso de aprendizaje
-                        mediante proyectos y retos reales.</p>
+            <!-- Inicial -->
+            <div class="level-detail-card reveal" id="inicial-summary">
+                <div class="level-visual reveal reveal-left">
+                    <img src="img/niveles-académicos/INICIAL.jpg (1).jpeg" alt="Nivel Inicial" class="level-img">
                 </div>
-                <div class="identity-card primary">
-                    <div class="identity-icon">🌍</div>
-                    <h3>Visión Global</h3>
-                    <p>Preparamos a nuestros alumnos para un mundo interconectado, con un fuerte énfasis en idiomas y
-                        competencias digitales.</p>
+                <div class="level-info reveal reveal-right">
+                    <h2>Nivel Inicial</h2>
+                    <p class="level-intro">El inicio de una gran aventura educativa. En San José, brindamos un ambiente
+                        seguro, cálido y estimulante donde los más pequeños desarrollan sus habilidades básicas mientras
+                        juegan y descubren el mundo.</p>
+                    <ul class="level-features">
+                        <li><i class="fas fa-check-circle"></i> Desarrollo psicomotriz y emocional.</li>
+                        <li><i class="fas fa-check-circle"></i> Estimulación temprana en inglés.</li>
+                        <li><i class="fas fa-check-circle"></i> Talleres de arte y expresión corporal.</li>
+                    </ul>
+                    <a href="inicial.html" class="btn-level-more">Saber más <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Primaria -->
+            <div class="level-detail-card reverse reveal" id="primaria-summary">
+                <div class="level-visual reveal reveal-right">
+                    <img src="img/niveles-académicos/PRIMARIA.jpg (1).jpeg" alt="Nivel Primaria" class="level-img">
+                </div>
+                <div class="level-info reveal reveal-left">
+                    <h2>Nivel Primaria</h2>
+                    <p class="level-intro">Construcción de bases sólidas. En este nivel, potenciamos el pensamiento
+                        lógico, la comprensión lectora y la autonomía, integrando valores cristianos y cívicos en cada
+                        aprendizaje.</p>
+                    <ul class="level-features">
+                        <li><i class="fas fa-check-circle"></i> Metodología de proyectos (ABP).</li>
+                        <li><i class="fas fa-check-circle"></i> Fortalecimiento en matemáticas y ciencias.</li>
+                        <li><i class="fas fa-check-circle"></i> Formación espiritual y deportiva.</li>
+                    </ul>
+                    <a href="primaria.html" class="btn-level-more">Saber más <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Secundaria -->
+            <div class="level-detail-card" id="secundaria-summary">
+                <div class="level-visual">
+                    <img src="img/niveles-académicos/SECUNDARIA.jpg (1).jpeg" alt="Nivel Secundaria" class="level-img">
+                </div>
+                <div class="level-info">
+                    <h2>Nivel Secundaria</h2>
+                    <p class="level-intro">Preparación para el mundo y la universidad. Nos enfocamos en la excelencia
+                        académica, el liderazgo y la investigación, asegurando que nuestros egresados estén listos para
+                        los retos globales.</p>
+                    <ul class="level-features">
+                        <li><i class="fas fa-check-circle"></i> Pre-universitaria integrada.</li>
+                        <li><i class="fas fa-check-circle"></i> Proyectos de investigación e innovación.</li>
+                        <li><i class="fas fa-check-circle"></i> Certificaciones internacionales.</li>
+                    </ul>
+                    <a href="secundaria.html" class="btn-level-more">Saber más <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Levels Section (Reused and refined) -->
-    <section class="levels-section-internal">
-        <div class="container">
-            <div class="section-header centered">
-                <span class="section-tag">Niveles</span>
-                <h2 class="section-title">Nuestros Niveles</h2>
-            </div>
-            <div class="identity-grid">
-                <!-- Shortened for structure -->
-                <div class="identity-card">
-                    <h3>Inicial</h3>
-                    <p>Desarrollo emocional y psicomotriz en un ambiente seguro y estimulante para los más pequeños.</p>
-                </div>
-                <div class="identity-card">
-                    <h3>Primaria</h3>
-                    <p>Consolidación de competencias fundamentales, pensamiento crítico y formación en valores.</p>
-                </div>
-                <div class="identity-card">
-                    <h3>Secundaria</h3>
-                    <p>Exigencia académica y orientación vocacional para asegurar el éxito en la vida universitaria.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Modern Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Branding Column -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                        <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo">
                     </div>
-                    <p>Formando líderes con valores y excelencia académica desde hace más de 35 años.</p>
+                    <p>Formando líderes con valores y excelencia académica en la ciudad de Juliaca desde 1990.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/51949373659" class="social-icon" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
 
+                <!-- Academic Column -->
                 <div class="footer-col">
-                    <h4>Enlaces rápidos</h4>
+                    <h4>Niveles</h4>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="quienes-somos.html">Nosotros</a></li>
-                        <li><a href="propuesta-educativa.html">Propuesta</a></li>
-                        <li><a href="index.html#admision">Admisión</a></li>
+                        <li><a href="inicial.html">Nivel Inicial</a></li>
+                        <li><a href="primaria.html">Nivel Primaria</a></li>
+                        <li><a href="secundaria.html">Nivel Secundaria</a></li>
+                        <li><a href="propuesta-educativa.html">Resumen Académico</a></li>
                     </ul>
                 </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-col">
+                    <h4>Institución</h4>
+                    <ul>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="index.html#admision">Admisión 2026</a></li>
+                        <li><a href="#">Calendario Escolar</a></li>
+                        <li><a href="#">Intranet Familiar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Map Column -->
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Principal 123, Juliaca, Puno, Perú</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+51 949 373 659</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>informes@sjj.edu.pe</span>
+                        </li>
+                    </ul>
+                    <div class="mini-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1912.261276008!2d-70.1345842!3d-15.4951478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9167f3c6a4618751%3A0x6790dcfc5f9630c8!2sColegio%20San%20Jos%C3%A9!5e0!3m2!1ses-419!2spe!4v1700000000000!5m2!1ses-419!2spe"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Colegio San José Juliaca. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Colegio San José Juliaca. Excelencia que trasciende.</p>
+                <div class="footer-links">
+                    <a href="#">Libro de Reclamaciones</a>
+                    <a href="#">Política de Privacidad</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -168,7 +263,7 @@
                     <button class="chat-option" data-answer="admision">¿Requisitos de Admisión?</button>
                     <button class="chat-option" data-answer="niveles">¿Qué niveles tienen?</button>
                     <button class="chat-option" data-answer="ubicacion">¿Dónde están ubicados?</button>
-                    <a href="https://wa.me/51910006323" target="_blank" class="chat-option whatsapp-opt">
+                    <a href="https://wa.me/51949373659" target="_blank" class="chat-option whatsapp-opt">
                         <i class="fab fa-whatsapp"></i> Hablar con un asesor
                     </a>
                 </div>
