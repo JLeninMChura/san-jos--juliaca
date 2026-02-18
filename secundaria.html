@@ -4,14 +4,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secundaria - Colegio San José Juliaca</title>
+    <title>Nivel Secundaria - Colegio San José Juliaca</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body>
-    <h1>Nivel Secundaria</h1>
-    <p>Página en construcción.</p>
-    <a href="index.html">Volver al inicio</a>
+<body id="inicio" class="nivel-secundaria">
+    <!-- Background Particles -->
+    <div class="bg-particles">
+        <div class="topography-lines"></div>
+        <div class="particle p-solid p1"></div>
+        <div class="particle p-solid p3"></div>
+        <div class="particle p-dot d1"></div>
+        <div class="particle p-outline o1"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+            </div>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="quienes-somos.html" class="nav-link">Nosotros</a></li>
+                <li class="nav-item dropdown">
+                    <a href="propuesta-educativa.html" class="nav-link dropdown-toggle active">Niveles Académicos <i
+                            class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="inicial.html">INICIAL</a></li>
+                        <li><a href="primaria.html">PRIMARIA</a></li>
+                        <li><a href="secundaria.html">SECUNDARIA</a></li>
+                        <li><a href="areas.html">ÁREAS</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#admision" class="nav-link">Admisión</a></li>
+                <li><a href="https://www.sjj.edu.pe/intranet/login" class="nav-link btn-intranet">Intranet</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider" id="inicio">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="img/Portada para Facebook Bienvenidos a Clases Primaria Rojo (7).jpg"
+                    alt="Secundaria Liderazgo" class="slide-img">
+                <div class="hero-floating-element"></div>
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-tag">LIDERAZGO & EXCELENCIA</span>
+                        <h1 class="slide-title">Formando Líderes para el Mundo</h1>
+                        <p class="slide-description">Preparación pre-universitaria de alto rigor y formación integral
+                            basada en valores josefinos.</p>
+                        <div class="slide-actions">
+                            <a href="index.html#admision" class="btn btn-primary">Matrícula 2026</a>
+                            <a href="#competencia" class="btn btn-secondary">Ver Logros</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/LLLLLLLLLLLLLLL.jpg.jpeg" alt="Debate y Competencia" class="slide-img">
+                <div class="hero-floating-element"></div>
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-tag">NIVEL COMPETITIVO</span>
+                        <h1 class="slide-title">Dominio de la Argumentación</h1>
+                        <p class="slide-description">Estudiantes que conquistan los primeros lugares en debates y
+                            concursos nacionales semanalmente.</p>
+                        <div class="slide-actions">
+                            <a href="#debate" class="btn btn-primary">Círculo de Debate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-controls">
+            <button class="slider-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-dots"></div>
+    </section>
+
+    <!-- Pillars of Excellence -->
+    <section class="section pillars-section" id="pilares">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Nuestra Misión</span>
+                <h2 class="section-title">Pilares de Preparación Superior</h2>
+                <p class="section-subtitle">Garantizamos una transición exitosa a la vida universitaria y profesional.
+                </p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fas fa-university"></i></div>
+                    <h3>Pre-Universitario Real</h3>
+                    <p>Convenios y metodologías enfocadas en el ingreso a las mejores universidades del país y del
+                        extranjero.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3>Oratoria y Debate</h3>
+                    <p>Desarrollo de habilidades de persuasión, análisis crítico y expresión oral de alto nivel.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>Visión Tecnológica</h3>
+                    <p>Dominio de herramientas digitales avanzadas, programación y proyectos de innovación científica.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Fuerza Competitiva & Debate -->
+    <section class="section competition-section gray-bg" id="competencia">
+        <div class="container">
+            <div class="competition-layout">
+                <div class="competition-content">
+                    <span class="section-tag">Orgullo Josefinos</span>
+                    <h2 class="section-title">Fuerza Competitiva de Élite</h2>
+                    <p>En el Colegio San José, la competencia no es un evento, es nuestro estilo de vida académico.</p>
+
+                    <div class="achievement-highlight-item">
+                        <div class="achievement-icon icon-gold"><i class="fas fa-trophy"></i></div>
+                        <div class="achievement-text">
+                            <h4>Concursos Semanales</h4>
+                            <p>Nuestros estudiantes participan activamente en concursos de conocimientos y debate cada
+                                semana a nivel regional y nacional.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-highlight-item">
+                        <div class="achievement-icon icon-red"><i class="fas fa-medal"></i></div>
+                        <div class="achievement-text">
+                            <h4>Primeros Lugares</h4>
+                            <p>Mantenemos una racha histórica de conquistas, posicionando al SJJ siempre en el podio de
+                                honor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="competition-image-stack">
+                    <div class="image-box box-1">
+                        <img src="img/niños12.jpg" alt="Estudiantes Destacados">
+                    </div>
+                    <div class="victory-badge">
+                        <span class="v-number">1°</span>
+                        <span class="v-text">Lugar Regional</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Círculo de Debate Section -->
+    <section class="section debate-circle-section" id="debate">
+        <div class="container text-center">
+            <div class="section-header">
+                <span class="section-tag">Especialización</span>
+                <h2 class="section-title">Círculo de Debate San José</h2>
+                <p>El arte de pensar, la fuerza de comunicar.</p>
+            </div>
+
+            <div class="debate-features-grid">
+                <div class="debate-feature">
+                    <div class="df-icon"><i class="fas fa-brain"></i></div>
+                    <h4>Análisis Crítico</h4>
+                    <p>Evaluamos situaciones actuales con profundidad y rigor lógico.</p>
+                </div>
+                <div class="debate-feature">
+                    <div class="df-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h4>Ética en el Discurso</h4>
+                    <p>Valores josefinos aplicados a la defensa de grandes ideas.</p>
+                </div>
+                <div class="debate-feature">
+                    <div class="df-icon"><i class="fas fa-users-class"></i></div>
+                    <h4>Entrenamiento de Élite</h4>
+                    <p>Prácticas intensivas de oratoria, expresión corporal y argumentación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Un Día en Secundaria - Special Timeline -->
+    <section class="section life-at-secundaria-interactive" id="dia-en-secundaria">
+        <div class="abstract-shape shape-sec-1"></div>
+        <div class="abstract-shape shape-sec-2"></div>
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Experiencia SJJ</span>
+                <h2 class="section-title">Un Día en Secundaria</h2>
+                <p class="section-subtitle">Rigor académico, madurez y liderazgo en cada actividad.</p>
+            </div>
+
+            <div class="timeline-container-modern">
+                <!-- Step 1 -->
+                <div class="timeline-item-modern">
+                    <div class="timeline-icon-box">
+                        <i class="fas fa-chess-knight"></i>
+                        <span class="step-number">1</span>
+                    </div>
+                    <div class="timeline-content-modern">
+                        <h3>Organización y Metas</h3>
+                        <p>Inicio del día estableciendo objetivos académicos y revisión de cronogramas
+                            pre-universitarios.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item-modern">
+                    <div class="timeline-icon-box">
+                        <i class="fas fa-microscope"></i>
+                        <span class="step-number">2</span>
+                    </div>
+                    <div class="timeline-content-modern">
+                        <h3>Investigación Científica</h3>
+                        <p>Laboratorios avanzados y proyectos de indagación alineados a estándares internacionales.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item-modern">
+                    <div class="timeline-icon-box">
+                        <i class="fas fa-calculator"></i>
+                        <span class="step-number">3</span>
+                    </div>
+                    <div class="timeline-content-modern">
+                        <h3>Razonamiento Superior</h3>
+                        <p>Matemática y Ciencias aplicadas con metodologías de resolución de problemas complejos.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item-modern">
+                    <div class="timeline-icon-box">
+                        <i class="fas fa-comments-alt"></i>
+                        <span class="step-number">4</span>
+                    </div>
+                    <div class="timeline-content-modern">
+                        <h3>Cátedra de Debate</h3>
+                        <p>Sesiones de argumentación y oratoria integradas en el currículo de formación humanista.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-item-modern">
+                    <div class="timeline-icon-box">
+                        <i class="fas fa-star"></i>
+                        <span class="step-number">5</span>
+                    </div>
+                    <div class="timeline-content-modern">
+                        <h3>Liderazgo y Valores</h3>
+                        <p>Acompañamiento en tutoría enfocado en la identidad y el compromiso social josefino.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-footer text-center">
+                <a href="index.html#admision" class="btn btn-primary btn-large">Inicia tu Camino de Liderazgo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- University Alliance Section -->
+    <section class="section university-section gray-bg">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Alianzas Estratégicas</span>
+                <h2 class="section-title">Camino a la Universidad</h2>
+            </div>
+            <div class="uni-grid">
+                <div class="uni-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Simulacros Mensuales</h4>
+                    <p>Evaluamos el progreso real frente a exámenes de admisión nacionales.</p>
+                </div>
+                <div class="uni-card">
+                    <i class="fas fa-id-card"></i>
+                    <h4>Orientación Vocacional</h4>
+                    <p>Test y charlas personalizadas con profesionales de diversas áreas.</p>
+                </div>
+                <div class="uni-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Convenios Directos</h4>
+                    <p>Beneficios exclusivos con universidades líderes de la región.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                    </div>
+                    <p>Formando líderes con valores y excelencia académica desde 1990.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Nosotros</a></li>
+                        <li><a href="index.html#admision">Admisión</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📍 Av. Principal 123, Juliaca</li>
+                        <li>📞 +51 910 006 323</li>
+                        <li>✉️ informes@sjj.edu.pe</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Colegio San José Juliaca. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Virtual Assistant Chatbot -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-bot-info">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="bot-details">
+                        <span class="bot-name">Asistente San José</span>
+                        <span class="bot-status">En línea</span>
+                    </div>
+                </div>
+                <button id="close-chat" class="close-chat">&times;</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot">
+                    Hola 👋, soy tu asistente de Secundaria. ¿Deseas saber sobre nuestro Círculo de Debate o Admisión
+                    2026?
+                </div>
+                <div class="chat-options">
+                    <button class="chat-option" data-answer="debate">¿Cómo funciona el Círculo de Debate?</button>
+                    <button class="chat-option" data-answer="admision">Requisitos de Admisión</button>
+                    <a href="https://wa.me/51910006323" target="_blank" class="chat-option whatsapp-opt">
+                        <i class="fab fa-whatsapp"></i> Hablar con un asesor
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button id="chatbot-trigger" class="chatbot-trigger">
+            <div class="bot-icon">🤖</div>
+        </button>
+    </div>
+
+    <!-- Registration Popup Modal -->
+    <div id="registrationModal" class="registration-modal">
+        <div class="registration-modal-content">
+            <span class="close-registration-modal" id="closeRegistrationModal">&times;</span>
+            <img src="img/matrícula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
+            <a href="https://wa.me/51910006323?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
+                target="_blank" class="registration-btn">
+                <i class="fab fa-whatsapp"></i> Más información
+            </a>
+        </div>
+    </div>
+
+    <script src="Script.js"></script>
 </body>
 
 </html>

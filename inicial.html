@@ -4,14 +4,459 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicial - Colegio San José Juliaca</title>
+    <title>Nivel Inicial - Colegio San José Juliaca</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body>
-    <h1>Nivel Inicial</h1>
-    <p>Página en construcción.</p>
-    <a href="index.html">Volver al inicio</a>
+<body id="inicio" class="nivel-inicial">
+    <!-- Refined Background Particles -->
+    <div class="bg-particles">
+        <div class="topography-lines"></div>
+        <div class="particle p-solid p1"></div>
+        <div class="particle p-solid p3"></div>
+        <div class="particle p-solid p6"></div>
+        <div class="particle p-dot d1"></div>
+        <div class="particle p-dot d2"></div>
+        <div class="particle p-dot d3"></div>
+        <div class="particle p-outline o1"></div>
+        <div class="particle p-outline o2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+            </div>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="quienes-somos.html" class="nav-link">Nosotros</a></li>
+                <li class="nav-item dropdown">
+                    <a href="propuesta-educativa.html" class="nav-link dropdown-toggle active">Niveles Académicos <i
+                            class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="inicial.html">INICIAL</a></li>
+                        <li><a href="primaria.html">PRIMARIA</a></li>
+                        <li><a href="secundaria.html">SECUNDARIA</a></li>
+                        <li><a href="areas.html">ÁREAS</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#admision" class="nav-link">Admisión</a></li>
+                <li><a href="https://www.sjj.edu.pe/intranet/login" class="nav-link btn-intranet">Intranet</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider" id="inicio">
+        <div class="slider-container">
+            <!-- Facebook Video Slide (Now First) -->
+            <div class="slide video-slide active">
+                <div class="video-background">
+                    <iframe
+                        src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fweb.facebook.com%2Fwatch%2F%3Fv%3D4347815315462671&show_text=0&autoplay=true&mute=true&container_width=1200"
+                        frameborder="0" allow="autoplay; encrypted-media" allowFullScreen="true"></iframe>
+                </div>
+                <div class="hero-floating-element"></div>
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-tag">NIVEL INICIAL 2026</span>
+                        <h1 class="slide-title">Un mundo de descubrimientos</h1>
+                        <p class="slide-description">Nuestra propuesta educativa en acción. (Haz clic en el video para
+                            activar sonido y controles).</p>
+                        <div class="slide-actions">
+                            <a href="index.html#admision" class="btn btn-primary">Admisión 2026</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Slide (Now Second) -->
+            <div class="slide">
+                <div class="slide-placeholder hero-image-slide-2"></div>
+                <div class="hero-floating-element"></div>
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="slide-tag">ESTIMULACIÓN TEMPRANA</span>
+                        <h1 class="slide-title">Desarrollando talentos desde la infancia</h1>
+                        <p class="slide-description">Acompañamos el crecimiento emocional, intelectual y físico de
+                            nuestros estudiantes.</p>
+                        <div class="slide-actions">
+                            <a href="index.html#contacto" class="btn btn-primary">Informes Aquí</a>
+                            <a href="#metodologia" class="btn btn-secondary">Nuestra Propuesta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="slider-nav prev" id="prevSlide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </button>
+        <button class="slider-nav next" id="nextSlide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
+        </button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- Propuesta Educativa -->
+    <section class="section educative-proposal" id="propuesta">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestros Pilares</span>
+                <h2 class="section-title">Propuesta Pedagógica Inicial</h2>
+            </div>
+
+            <div class="proposal-grid">
+                <div class="infantil-card soft-blue-bg">
+                    <div class="card-icon">🎨</div>
+                    <h3>Aprendizaje Creativo</h3>
+                    <p>Fomentamos la expresión artística y la imaginación a través de talleres dinámicos y lúdicos.</p>
+                </div>
+                <div class="infantil-card soft-red-bg">
+                    <div class="card-icon">🧠</div>
+                    <h3>Inteligencia Emocional</h3>
+                    <p>Enseñamos a identificar y gestionar emociones, construyendo una base sólida de seguridad y
+                        autonomía.</p>
+                </div>
+                <div class="infantil-card soft-green-bg">
+                    <div class="card-icon">🤝</div>
+                    <h3>Socialización Sana</h3>
+                    <p>Promovemos la convivencia basada en valores, el respeto y la cooperación entre compañeros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Desarrollo -->
+    <section class="section development-areas gray-bg" id="areas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Crecimiento Integral</span>
+                <h2 class="section-title">Áreas de Desarrollo Infantil</h2>
+            </div>
+            <div class="areas-grid">
+                <div class="area-item">
+                    <div class="area-inner">
+                        <div class="area-front soft-yellow-bg">
+                            <i class="fas fa-child"></i>
+                            <h4>Psicomotricidad</h4>
+                        </div>
+                        <div class="area-back">
+                            <p>Circuitos y juegos diseñados para mejorar el equilibrio, la coordinación y el control
+                                corporal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="area-item">
+                    <div class="area-inner">
+                        <div class="area-front soft-blue-bg">
+                            <i class="fas fa-language"></i>
+                            <h4>COMUNICACIÓN</h4>
+                        </div>
+                        <div class="area-back">
+                            <p>Estimulación del lenguaje oral, comprensión lectora temprana y expresión fluida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="area-item">
+                    <div class="area-inner">
+                        <div class="area-front soft-purple-bg">
+                            <i class="fas fa-music"></i>
+                            <h4>ARTE Y MÚSICA</h4>
+                        </div>
+                        <div class="area-back">
+                            <p>Despertamos la sensibilidad auditiva y rítmica a través de instrumentos y canto.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="area-item">
+                    <div class="area-inner">
+                        <div class="area-front soft-orange-bg">
+                            <i class="fas fa-flask"></i>
+                            <h4>CIENCIA Y AMBIENTE</h4>
+                        </div>
+                        <div class="area-back">
+                            <p>Primeros pasos en la experimentación y el cuidado de nuestra casa común: la Tierra.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodología -->
+    <section class="section methodology" id="metodologia">
+        <div class="container">
+            <div class="methodology-block">
+                <div class="method-text">
+                    <span class="section-tag">Cómo enseñamos</span>
+                    <h2 class="section-title">Metodología de Juego Dirigido</h2>
+                    <p>En el Nivel Inicial de nuestro colegio, utilizamos el juego como la herramienta principal de
+                        aprendizaje. Nuestra metodología se basa en:</p>
+                    <ul class="method-list">
+                        <li><i class="fas fa-check-circle"></i> Aprendizaje por rincones y proyectos.</li>
+                        <li><i class="fas fa-check-circle"></i> Estimulación temprana de la lectoescritura.</li>
+                        <li><i class="fas fa-check-circle"></i> Integración tecnológica responsable.</li>
+                    </ul>
+                </div>
+                <div class="method-img-wrapper">
+                    <div class="img-placeholder main-method-img"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería structure -->
+    <section class="section gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestros Momentos</span>
+                <h2 class="section-title">Galería de Actividades</h2>
+            </div>
+            <div class="gallery-carousel-container">
+                <div class="gallery-track">
+                    <!-- Original items -->
+                    <div class="gallery-card" data-full="img/inicial/20250415_160209.jpg">
+                        <img src="img/inicial/20250415_160209.jpg" alt="Actividad 1">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250423_085719.jpg">
+                        <img src="img/inicial/20250423_085719.jpg" alt="Actividad 2">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250423_090402.jpg">
+                        <img src="img/inicial/20250423_090402.jpg" alt="Actividad 3">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250506_112626(0).jpg">
+                        <img src="img/inicial/20250506_112626(0).jpg" alt="Actividad 4">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250506_113448.jpg">
+                        <img src="img/inicial/20250506_113448.jpg" alt="Actividad 5">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250506_114634.jpg">
+                        <img src="img/inicial/20250506_114634.jpg" alt="Actividad 6">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250902_131123.jpg">
+                        <img src="img/inicial/20250902_131123.jpg" alt="Actividad 7">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/DSC03535.JPG">
+                        <img src="img/inicial/DSC03535.JPG" alt="Actividad 8">
+                    </div>
+                    <!-- Clones for infinite effect (Set 2) -->
+                    <div class="gallery-card" data-full="img/inicial/20250415_160209.jpg">
+                        <img src="img/inicial/20250415_160209.jpg" alt="Actividad 1">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250423_085719.jpg">
+                        <img src="img/inicial/20250423_085719.jpg" alt="Actividad 2">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250423_090402.jpg">
+                        <img src="img/inicial/20250423_090402.jpg" alt="Actividad 3">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250506_112626(0).jpg">
+                        <img src="img/inicial/20250506_112626(0).jpg" alt="Actividad 4">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250506_113448.jpg">
+                        <img src="img/inicial/20250506_113448.jpg" alt="Actividad 5">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250506_114634.jpg">
+                        <img src="img/inicial/20250506_114634.jpg" alt="Actividad 6">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/20250902_131123.jpg">
+                        <img src="img/inicial/20250902_131123.jpg" alt="Actividad 7">
+                    </div>
+                    <div class="gallery-card" data-full="img/inicial/DSC03535.JPG">
+                        <img src="img/inicial/DSC03535.JPG" alt="Actividad 8">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="galleryLightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-nav prev" id="lightboxPrev">&lt;</button>
+        <img class="lightbox-content" id="lightboxImg">
+        <button class="lightbox-nav next" id="lightboxNext">&gt;</button>
+        <div id="lightboxCaption"></div>
+    </div>
+
+    <!-- Infraestructura -->
+    <section class="section infra-section gray-bg">
+        <div class="container">
+            <div class="infra-grid">
+                <div class="infra-img">
+                    <div class="img-placeholder infra-main"></div>
+                </div>
+                <div class="infra-content">
+                    <h2 class="section-title">Espacios Diseñados para Ellos</h2>
+                    <p>Nuestras instalaciones han sido creadas pensando en la seguridad y el máximo aprovechamiento
+                        pedagógico:</p>
+                    <ul class="infra-list">
+                        <li><strong>Aulas Temáticas:</strong> Equipadas con materiales didácticos de última generación.
+                        </li>
+                        <li><strong>Parque Infantil:</strong> Zona de juegos segura con piso amortiguado.</li>
+                        <li><strong>Sala de Psicomotricidad:</strong> Equipada para el desarrollo físico integral.</li>
+                        <li><strong>Huerto Escolar:</strong> Para el contacto directo con la naturaleza.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Valores -->
+    <section class="section values-section infantil-gradient">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-item-modern">
+                    <div class="v-icon">✨</div>
+                    <h4>Bondad</h4>
+                </div>
+                <div class="value-item-modern">
+                    <div class="v-icon">❤️</div>
+                    <h4>Amor</h4>
+                </div>
+                <div class="value-item-modern">
+                    <div class="v-icon">🌟</div>
+                    <h4>Verdad</h4>
+                </div>
+                <div class="value-item-modern">
+                    <div class="v-icon">🙌</div>
+                    <h4>Respeto</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content-modern">
+                <h2>¿Listo para que tu hijo descubra su potencial?</h2>
+                <p>Las vacantes para el Nivel Inicial 2026 son limitadas. ¡Asegura su futuro hoy!</p>
+                <div class="cta-buttons">
+                    <a href="index.html#admision" class="btn btn-primary btn-large">Postula Ahora</a>
+                    <a href="https://wa.me/51910006323" class="btn btn-whatsapp-large"><i class="fab fa-whatsapp"></i>
+                        Hablar con informes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                    </div>
+                    <p>Formando líderes con valores y excelencia académica desde 1990.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#actividades">Actividades</a></li>
+                        <li><a href="quienes-somos.html">Nosotros</a></li>
+                        <li><a href="index.html#admision">Admisión</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Reglamento interno</a></li>
+                        <li><a href="#">Calendario académico</a></li>
+                        <li><a href="#">Libro de reclamaciones</a></li>
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📍 Av. Principal 123, Juliaca</li>
+                        <li>📞 +51 910 006 323</li>
+                        <li>✉️ informes@sjj.edu.pe</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Colegio San José Juliaca. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Términos y condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Virtual Assistant Chatbot -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-bot-info">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="bot-details">
+                        <span class="bot-name">Asistente San José</span>
+                        <span class="bot-status">En línea</span>
+                    </div>
+                </div>
+                <button id="close-chat" class="close-chat">&times;</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot">
+                    Hola 👋, soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+                </div>
+                <div class="chat-options">
+                    <button class="chat-option" data-answer="admision">¿Requisitos de Admisión?</button>
+                    <button class="chat-option" data-answer="niveles">¿Qué niveles tienen?</button>
+                    <button class="chat-option" data-answer="ubicacion">¿Dónde están ubicados?</button>
+                    <a href="https://wa.me/51910006323" target="_blank" class="chat-option whatsapp-opt">
+                        <i class="fab fa-whatsapp"></i> Hablar con un asesor
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button id="chatbot-trigger" class="chatbot-trigger">
+            <div class="bot-icon">🤖</div>
+            <div class="chat-badge">1</div>
+        </button>
+    </div>
+
+    <!-- Registration Popup Modal -->
+    <div id="registrationModal" class="registration-modal">
+        <div class="registration-modal-content">
+            <span class="close-registration-modal" id="closeRegistrationModal">&times;</span>
+            <img src="img/matrícula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
+            <a href="https://wa.me/51910006323?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
+                target="_blank" class="registration-btn">
+                <i class="fab fa-whatsapp"></i> Más información
+            </a>
+        </div>
+    </div>
+
+    <script src="Script.js"></script>
 </body>
 
 </html>

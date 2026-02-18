@@ -622,6 +622,146 @@ class ChatbotAssistant {
 }
 
 // ========================================
+// REGISTRATION POPUP MODAL
+// ========================================
+class RegistrationModal {
+    constructor() {
+        this.modal = document.getElementById('registrationModal');
+        this.closeBtn = document.getElementById('closeRegistrationModal');
+
+        if (this.modal && this.closeBtn) {
+            this.init();
+        }
+    }
+
+    init() {
+        // Show modal on page load
+        window.addEventListener('load', () => {
+            // Small delay for better visual presentation
+            setTimeout(() => {
+                this.openModal();
+            }, 1200);
+        });
+
+        // Close button functionality
+        this.closeBtn.onclick = () => this.closeModal();
+
+        // Click outside to close
+        window.addEventListener('click', (event) => {
+            if (event.target == this.modal) {
+                this.closeModal();
+            }
+        });
+
+        // ESC key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') this.closeModal();
+        });
+    }
+
+    openModal() {
+        this.modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeModal() {
+        this.modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// ========================================
+// INTERACTIVE GALLERY (LIGHTBOX)
+// ========================================
+class InteractiveGallery {
+    constructor() {
+        this.galleryItems = document.querySelectorAll('.gallery-card');
+        this.lightbox = document.getElementById('galleryLightbox');
+        this.lightboxImg = document.getElementById('lightboxImg');
+        this.lightboxCaption = document.getElementById('lightboxCaption');
+        this.closeBtn = document.querySelector('.lightbox-close');
+        this.prevBtn = document.getElementById('lightboxPrev');
+        this.nextBtn = document.getElementById('lightboxNext');
+        this.currentIndex = 0;
+
+        if (this.galleryItems.length > 0 && this.lightbox) {
+            this.init();
+        }
+    }
+
+    init() {
+        this.galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                this.currentIndex = index;
+                this.updateLightbox();
+                this.openLightbox();
+            });
+        });
+
+        if (this.closeBtn) {
+            this.closeBtn.addEventListener('click', () => this.closeLightbox());
+        }
+
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.prevImage();
+            });
+        }
+
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.nextImage();
+            });
+        }
+
+        this.lightbox.addEventListener('click', (e) => {
+            if (e.target === this.lightbox) {
+                this.closeLightbox();
+            }
+        });
+
+        // ESC and Arrows for navigation
+        document.addEventListener('keydown', (e) => {
+            if (this.lightbox.style.display === 'block') {
+                if (e.key === 'Escape') this.closeLightbox();
+                if (e.key === 'ArrowLeft') this.prevImage();
+                if (e.key === 'ArrowRight') this.nextImage();
+            }
+        });
+    }
+
+    updateLightbox() {
+        const item = this.galleryItems[this.currentIndex];
+        const src = item.getAttribute('data-full');
+        const alt = item.querySelector('img').alt;
+        this.lightboxImg.src = src;
+        this.lightboxCaption.textContent = alt;
+    }
+
+    nextImage() {
+        this.currentIndex = (this.currentIndex + 1) % this.galleryItems.length;
+        this.updateLightbox();
+    }
+
+    prevImage() {
+        this.currentIndex = (this.currentIndex - 1 + this.galleryItems.length) % this.galleryItems.length;
+        this.updateLightbox();
+    }
+
+    openLightbox() {
+        this.lightbox.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeLightbox() {
+        this.lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// ========================================
 // INITIALIZE ALL
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -634,6 +774,8 @@ document.addEventListener('DOMContentLoaded', () => {
     new LazyLoader();
     new ParallaxEffect();
     new ChatbotAssistant();
+    new RegistrationModal();
+    new InteractiveGallery();
 
     // Add fade-in animation to hero content
     const heroContent = document.querySelector('.slide-content');
