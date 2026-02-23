@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colegio San José Juliaca | Educación de Excelencia</title>
-    <link rel="icon" href="img/LOGO PRINCIPAL.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="icon" href="img/logo-principal.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,10 +16,12 @@
 </head>
 
 <body id="inicio">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     <!-- Page Preloader -->
     <div id="preloader" class="preloader">
         <div class="preloader-content">
-            <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo" class="preloader-logo">
+            <img src="img/logo-principal.png" alt="Colegio San José Logo" class="preloader-logo">
             <div class="preloader-spinner"></div>
         </div>
     </div>
@@ -68,7 +70,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                <a href="index.html"><img src="img/logo-principal.png" alt="San José Juliaca Logo" class="logo-img"></a>
             </div>
 
             <button class="menu-toggle" id="menuToggle">
@@ -100,7 +102,6 @@
 
     <!-- Hero Slider -->
     <section class="hero-slider" id="inicio">
-        <div class="hero-floating-element"></div>
         <div class="slider-container">
             <div class="slide active" style="background-image: url('img/LENIN.jpg.jpeg');">
                 <div class="slide-overlay"></div>
@@ -132,8 +133,8 @@
                         <p class="slide-description">Abrimos nuestras puertas a estudiantes que sueñan en grande y
                             desean formarse con excelencia y valores.</p>
                         <div class="slide-actions">
-                            <a href="#niveles" class="btn btn-primary">Nuestros Niveles</a>
-                            <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+                            <a href="propuesta-educativa.html" class="btn btn-primary">Nuestros Niveles</a>
+                            <a href="#admision" class="btn btn-secondary">Contáctanos</a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +164,7 @@
                         <h1 class="slide-title">Más que educación académica</h1>
                         <p class="slide-description">Formación en valores, arte, deporte y tecnología</p>
                         <div class="slide-actions">
-                            <a href="#niveles" class="btn btn-primary">Descubre más</a>
+                            <a href="propuesta-educativa.html" class="btn btn-primary">Descubre más</a>
                             <a href="#admision" class="btn btn-secondary">Únete a nosotros</a>
                         </div>
                     </div>
@@ -178,8 +179,8 @@
                         <h1 class="slide-title">Juntos construimos el mañana</h1>
                         <p class="slide-description">Una familia comprometida con la excelencia educativa</p>
                         <div class="slide-actions">
-                            <a href="#contacto" class="btn btn-primary">Contáctanos</a>
-                            <a href="#noticias" class="btn btn-secondary">Últimas noticias</a>
+                            <a href="#admision" class="btn btn-primary">Contáctanos</a>
+                            <a href="#actividades" class="btn btn-secondary">Últimas noticias</a>
                         </div>
                     </div>
                 </div>
@@ -203,7 +204,6 @@
             <span>Descubre más</span>
             <div class="scroll-arrow"></div>
         </div>
-        <div class="hero-bottom-waves"></div>
     </section>
 
     <!-- Motto Section -->
@@ -323,29 +323,35 @@
                         exigencia académica con valores humanos sólidos.</p>
 
                     <div class="benefits-list">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">🎓</div>
-                            <div class="benefit-text">
-                                <h4>Excelencia Académica</h4>
-                                <p>Programa curricular exigente y actualizado que garantiza el ingreso a las mejores
-                                    universidades.</p>
+                        <div class="reveal reveal-left">
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="benefit-text">
+                                    <h4>Excelencia Académica</h4>
+                                    <p>Programa curricular exigente y actualizado que garantiza el ingreso a las mejores
+                                        universidades.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="benefit-item">
-                            <div class="benefit-icon">❤️</div>
-                            <div class="benefit-text">
-                                <h4>Formación en Valores</h4>
-                                <p>Fomentamos el respeto, la responsabilidad y la solidaridad como pilares de vida.
-                                </p>
+                        <div class="reveal reveal-left" style="transition-delay: 0.1s;">
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+                                <div class="benefit-text">
+                                    <h4>Formación en Valores</h4>
+                                    <p>Fomentamos el respeto, la responsabilidad y la solidaridad como pilares de vida.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="benefit-item">
-                            <div class="benefit-icon">💻</div>
-                            <div class="benefit-text">
-                                <h4>Innovación Tecnológica</h4>
-                                <p>Aulas equipadas y metodología digital para el aprendizaje del siglo XXI.</p>
+                        <div class="reveal reveal-left" style="transition-delay: 0.2s;">
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fas fa-laptop-code"></i></div>
+                                <div class="benefit-text">
+                                    <h4>Innovación Tecnológica</h4>
+                                    <p>Aulas equipadas y metodología digital para el aprendizaje del siglo XXI.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -437,16 +443,19 @@
                     <h3>Solicita información</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" name="nombre" placeholder="Nombre completo del apoderado" required>
+                            <input type="text" name="nombre" id="fNombre" placeholder=" " required>
+                            <label class="floating-label" for="fNombre">Nombre completo del apoderado</label>
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+                            <input type="tel" name="telefono" id="fTelefono" placeholder=" " required>
+                            <label class="floating-label" for="fTelefono">Teléfono / WhatsApp</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="alumno" placeholder="Nombre del alumno" required>
+                            <input type="text" name="alumno" id="fAlumno" placeholder=" " required>
+                            <label class="floating-label" for="fAlumno">Nombre del alumno</label>
                         </div>
                         <div class="form-group">
-                            <select name="nivel" required>
+                            <select name="nivel" id="fNivel" required>
                                 <option value="">Nivel de interés</option>
                                 <option value="Inicial">Inicial</option>
                                 <option value="Primaria">Primaria</option>
@@ -454,9 +463,10 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea name="mensaje" placeholder="Mensaje adicional (opcional)" rows="3"></textarea>
+                            <textarea name="mensaje" id="fMensaje" placeholder=" " rows="3"></textarea>
+                            <label class="floating-label" for="fMensaje">Mensaje adicional (opcional)</label>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">
+                        <button type="submit" class="btn btn-primary btn-full" id="formSubmitBtn">
                             <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
                         </button>
                     </form>
@@ -476,15 +486,19 @@
                 <!-- Branding Column -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo">
+                        <img src="img/logo-principal.png" alt="Colegio San José Logo">
                     </div>
                     <p>Formando líderes con valores y excelencia académica en la ciudad de Juliaca desde 1990.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/51949373659" class="social-icon" title="WhatsApp"><i
-                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" class="social-icon"
+                            title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i><span
+                                class="sr-only">Facebook</span></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i><span
+                                class="sr-only">Instagram</span></a>
+                        <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i><span
+                                class="sr-only">YouTube</span></a>
+                        <a href="https://wa.me/51949373659" class="social-icon" title="WhatsApp" target="_blank"><i
+                                class="fab fa-whatsapp"></i><span class="sr-only">WhatsApp</span></a>
                     </div>
                 </div>
 
@@ -572,8 +586,8 @@
                 </div>
             </div>
         </div>
-        <button id="chatbot-trigger" class="chatbot-trigger">
-            <div class="bot-icon">🤖</div>
+        <button id="chatbot-trigger" class="chatbot-trigger" title="Asistente San José">
+            <div class="bot-icon"></div>
             <div class="chat-badge">1</div>
         </button>
     </div>
@@ -582,7 +596,7 @@
     <div id="registrationModal" class="registration-modal">
         <div class="registration-modal-content">
             <span class="close-registration-modal" id="closeRegistrationModal">&times;</span>
-            <img src="img/matrícula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
+            <img src="img/matricula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
             <a href="https://wa.me/51949373659?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
                 target="_blank" class="registration-btn">
                 <i class="fab fa-whatsapp"></i> Más información
@@ -590,7 +604,7 @@
         </div>
     </div>
 
-    <script src="Script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

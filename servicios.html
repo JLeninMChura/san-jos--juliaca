@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios Institucionales | Colegio San José Juliaca</title>
-    <link rel="icon" href="img/LOGO PRINCIPAL.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="icon" href="img/logo-principal.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,7 +19,7 @@
     <!-- Page Preloader -->
     <div id="preloader" class="preloader">
         <div class="preloader-content">
-            <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo" class="preloader-logo">
+            <img src="img/logo-principal.png" alt="Colegio San José Logo" class="preloader-logo">
             <div class="preloader-spinner"></div>
         </div>
     </div>
@@ -49,10 +49,11 @@
                 </div>
             </div>
             <div class="top-bar-socials">
-                <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" target="_blank" title="Facebook"><i
-                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/colegiosanjosejuliaca?locale=es_LA" target="_blank"
+                    title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.tiktok.com/@colegiosanjosejuliaca1" target="_blank" title="TikTok"><i
+                        class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>
@@ -61,7 +62,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                <a href="index.html"><img src="img/logo-principal.png" alt="San José Juliaca Logo" class="logo-img"></a>
             </div>
 
             <button class="menu-toggle" id="menuToggle">
@@ -88,6 +89,16 @@
                         target="_blank">Admisión 2026</a></li>
                 <li><a href="https://www.sjj.edu.pe/intranet/login" class="nav-link btn-intranet">Intranet</a></li>
             </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav" aria-label="Navegación">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html"><i class="fas fa-home bc-icon"></i> Inicio</a></li>
+                <li><span>Servicios</span></li>
+            </ol>
         </div>
     </nav>
 
@@ -123,9 +134,8 @@
                 <!-- Comedor Card -->
                 <div class="service-modern-card reveal">
                     <div class="service-visual">
-                        <div class="service-img-placeholder">
-                            <i class="fas fa-utensils"></i>
-                            <span>Imagen: Comedor Institucional</span>
+                        <div class="service-img-container">
+                            <!-- Imagen removida intencionalmente -->
                         </div>
                         <div class="service-tag">Nutrición Saludable</div>
                     </div>
@@ -141,23 +151,22 @@
                     </div>
                 </div>
 
-                <!-- Transporte Card -->
+                <!-- Cancha de grass -->
                 <div class="service-modern-card reveal" style="transition-delay: 0.1s;">
                     <div class="service-visual">
-                        <div class="service-img-placeholder">
-                            <i class="fas fa-bus"></i>
-                            <span>Imagen: Transporte Escolar</span>
+                        <div class="service-img-container">
+                            <!-- Espacio sin foto -->
                         </div>
-                        <div class="service-tag">Seguridad Garantizada</div>
+                        <div class="service-tag">Deporte y Recreación</div>
                     </div>
                     <div class="service-info">
-                        <h3>Transporte Escolar</h3>
-                        <p>Servicio de movilidad con unidades modernas, conductores calificados y monitoreo constante
-                            para asegurar que cada estudiante llegue puntual y seguro.</p>
+                        <h3>Cancha de Grass</h3>
+                        <p>Espacio amplio para la práctica de fútbol y juegos recreativos, donde los estudiantes
+                            desarrollan el trabajo en equipo y el hábito deportivo.</p>
                         <ul class="service-points">
-                            <li><i class="fas fa-check"></i> Unidades con GPS y monitoreo</li>
-                            <li><i class="fas fa-check"></i> Rutas optimizadas por sectores</li>
-                            <li><i class="fas fa-check"></i> Personal de apoyo en cada unidad</li>
+                            <li><i class="fas fa-check"></i> Superficie de grass para uso escolar</li>
+                            <li><i class="fas fa-check"></i> Actividades deportivas regulares</li>
+                            <li><i class="fas fa-check"></i> Uso en horarios pedagógicos y recreos</li>
                         </ul>
                     </div>
                 </div>
@@ -165,9 +174,8 @@
                 <!-- Departamento Psicológico -->
                 <div class="service-modern-card reveal" style="transition-delay: 0.2s;">
                     <div class="service-visual">
-                        <div class="service-img-placeholder">
-                            <i class="fas fa-brain"></i>
-                            <span>Imagen: Departamento de Psicología</span>
+                        <div class="service-img-container">
+                            <!-- Imagen removida intencionalmente -->
                         </div>
                         <div class="service-tag">Acompañamiento Integral</div>
                     </div>
@@ -186,9 +194,8 @@
                 <!-- Tópico Médico -->
                 <div class="service-modern-card reveal">
                     <div class="service-visual">
-                        <div class="service-img-placeholder">
-                            <i class="fas fa-user-nurse"></i>
-                            <span>Imagen: Tópico de Enfermería</span>
+                        <div class="service-img-container">
+                            <!-- Imagen removida intencionalmente -->
                         </div>
                         <div class="service-tag">Primeros Auxilios</div>
                     </div>
@@ -204,46 +211,61 @@
                     </div>
                 </div>
 
-                <!-- Biblioteca -->
+                <!-- Juegos para Inicial -->
                 <div class="service-modern-card reveal" style="transition-delay: 0.1s;">
                     <div class="service-visual">
-                        <div class="service-img-placeholder">
-                            <i class="fas fa-book-reader"></i>
-                            <span>Imagen: Biblioteca Institucional</span>
+                        <div class="service-img-container">
+                            <!-- Espacio sin foto -->
                         </div>
-                        <div class="service-tag">Centro de Recursos</div>
+                        <div class="service-tag">Primera Infancia</div>
                     </div>
                     <div class="service-info">
-                        <h3>Biblioteca y Media Center</h3>
-                        <p>Un espacio moderno diseñado para la investigación y el fomento de la lectura, con acceso a
-                            recursos físicos y digitales de primer nivel.</p>
+                        <h3>Juegos para Nivel Inicial</h3>
+                        <p>Zona de juegos pensada para los más pequeños, donde desarrollan su motricidad, creatividad y
+                            socialización en un entorno seguro.</p>
                         <ul class="service-points">
-                            <li><i class="fas fa-check"></i> Amplia colección bibliográfica</li>
-                            <li><i class="fas fa-check"></i> Zonas de estudio colaborativo</li>
-                            <li><i class="fas fa-check"></i> Acceso a bibliotecas virtuales</li>
+                            <li><i class="fas fa-check"></i> Juegos adaptados a la edad</li>
+                            <li><i class="fas fa-check"></i> Espacios acolchados y seguros</li>
+                            <li><i class="fas fa-check"></i> Supervisión permanente del personal</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Laboratorios -->
+                <!-- Patio y área recreativa -->
                 <div class="service-modern-card reveal" style="transition-delay: 0.2s;">
                     <div class="service-visual">
-                        <div class="service-img-placeholder">
-                            <i class="fas fa-flask"></i>
-                            <span>Imagen: Laboratorios de Ciencias</span>
+                        <div class="service-img-container">
+                            <!-- Espacio sin foto -->
                         </div>
-                        <div class="service-tag">Ciencia Aplicada</div>
+                        <div class="service-tag">Vida Escolar</div>
                     </div>
                     <div class="service-info">
-                        <h3>Laboratorios Especializados</h3>
-                        <p>Infraestructura de vanguardia para la experimentación en ciencias y tecnología, permitiendo
-                            a los alumnos aprender haciendo.</p>
+                        <h3>Patio y Áreas Recreativas</h3>
+                        <p>Espacios destinados a formaciones, actividades cívicas y recreación diaria de los estudiantes,
+                            favoreciendo la convivencia y el sentido de comunidad.</p>
                         <ul class="service-points">
-                            <li><i class="fas fa-check"></i> Laboratorios de Física, Química y Bio</li>
-                            <li><i class="fas fa-check"></i> Centro de computación de alta gama</li>
-                            <li><i class="fas fa-check"></i> Equipamiento de robótica educativa</li>
+                            <li><i class="fas fa-check"></i> Áreas para juegos libres y dinámicas</li>
+                            <li><i class="fas fa-check"></i> Uso en ceremonias y actos institucionales</li>
+                            <li><i class="fas fa-check"></i> Entorno amplio y ventilado</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini CTA Section (CONVERSIÓN) -->
+    <section class="mini-cta-section">
+        <div class="container text-center">
+            <div class="mini-cta-card reveal">
+                <h2 class="section-title light">¿Necesitas más información?</h2>
+                <p>Nuestros asesores están listos para resolver todas tus dudas sobre nuestros servicios y proceso de
+                    matrícula.</p>
+                <div class="mini-cta-actions">
+                    <a href="index.html#admision" class="btn btn-primary btn-large">Solicitar Información</a>
+                    <a href="https://wa.me/51949373659" target="_blank" class="btn btn-secondary btn-large">
+                        <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
+                    </a>
                 </div>
             </div>
         </div>
@@ -256,7 +278,7 @@
                 <!-- Branding Column -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo">
+                        <img src="img/logo-principal.png" alt="Colegio San José Logo">
                     </div>
                     <p>Formando líderes con valores y excelencia académica en la ciudad de Juliaca desde 1990.</p>
                     <div class="footer-socials">
@@ -349,13 +371,13 @@
                 </div>
             </div>
         </div>
-        <button id="chatbot-trigger" class="chatbot-trigger">
-            <div class="bot-icon">🤖</div>
+        <button id="chatbot-trigger" class="chatbot-trigger" title="Asistente San José">
+            <div class="bot-icon"></div>
             <div class="chat-badge">1</div>
         </button>
     </div>
 
-    <script src="Script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

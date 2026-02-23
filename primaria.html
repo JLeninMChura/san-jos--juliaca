@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nivel Primaria - Colegio San José Juliaca</title>
-    <link rel="icon" href="img/LOGO PRINCIPAL.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="icon" href="img/logo-principal.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,10 +16,12 @@
 </head>
 
 <body id="inicio" class="nivel-primaria">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     <!-- Page Preloader -->
     <div id="preloader" class="preloader">
         <div class="preloader-content">
-            <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo" class="preloader-logo">
+            <img src="img/logo-principal.png" alt="Colegio San José Logo" class="preloader-logo">
             <div class="preloader-spinner"></div>
         </div>
     </div>
@@ -47,10 +49,11 @@
                 </div>
             </div>
             <div class="top-bar-socials">
-                <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" target="_blank" title="Facebook"><i
-                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/colegiosanjosejuliaca?locale=es_LA" target="_blank"
+                    title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.tiktok.com/@colegiosanjosejuliaca1" target="_blank" title="TikTok"><i
+                        class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>
@@ -59,7 +62,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                <a href="index.html"><img src="img/logo-principal.png" alt="San José Juliaca Logo" class="logo-img"></a>
             </div>
 
             <button class="menu-toggle" id="menuToggle">
@@ -89,6 +92,17 @@
         </div>
     </nav>
 
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav" aria-label="Navegación">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html"><i class="fas fa-home bc-icon"></i> Inicio</a></li>
+                <li><a href="propuesta-educativa.html">Niveles Académicos</a></li>
+                <li><span>Primaria</span></li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Hero Slider -->
     <section class="hero-slider" id="inicio">
         <div class="slider-container">
@@ -103,7 +117,7 @@
                         <p class="slide-description">Certificados por el Ministerio de Educación de Singapur y Editorial
                             Khalamos en el método PEMS.</p>
                         <div class="slide-actions">
-                            <a href="index.html#admision" class="btn btn-primary">Matrícula 2026</a>
+                            <a href="index.html#admision" class="btn btn-primary">Admisión 2026</a>
                             <a href="#metodo-pems" class="btn btn-secondary">Método PEMS</a>
                         </div>
                     </div>
@@ -111,7 +125,7 @@
             </div>
 
             <div class="slide">
-                <img src="img/niños12.jpg" alt="Matemática Singapur" class="slide-img">
+                <img src="img/niños12.jpg" alt="Matemática Singapur" class="slide-img" loading="lazy">
                 <div class="hero-floating-element"></div>
                 <div class="slide-overlay"></div>
                 <div class="container">
@@ -147,7 +161,7 @@
             <div class="pillars-grid">
                 <div class="pillar-card">
                     <div class="pillar-icon"><img src="img/singapore-badge.png" alt="Singapur"
-                            style="width: 60px; height: 60px; object-fit: contain;"></div>
+                            style="width: 60px; height: 60px; object-fit: contain;" loading="lazy"></div>
                     <h3>Certificación Singapur</h3>
                     <p>Contamos con el respaldo del sistema educativo #1 del mundo, integrando sus estándares en nuestro
                         currículo.</p>
@@ -185,11 +199,11 @@
                     </ul>
                 </div>
                 <div class="pems-image reveal reveal-right">
-                    <a href="img/primaria/20251029_083257(0).jpg" class="pems-lightbox-link" target="_blank"
-                        title="Ver imagen completa">
+                    <a href="img/primaria/20251029_083257(0).jpg" class="pems-lightbox-link gallery-card"
+                        data-full="img/primaria/20251029_083257(0).jpg" title="Ver imagen completa">
                         <div class="pems-image-wrapper">
                             <img src="img/primaria/20251029_083257(0).jpg" alt="Método PEMS en acción"
-                                class="pems-main-img">
+                                class="pems-main-img" loading="lazy">
                             <div class="pems-img-overlay">
                                 <i class="fas fa-expand-alt"></i>
                                 <span>Ver imagen completa</span>
@@ -211,7 +225,7 @@
             <div class="areas-grid-primaria">
                 <div class="area-card-modern">
                     <div class="area-image">
-                        <img src="img/inicial/20250423_090402.jpg" alt="Matemática" class="area-inner-img">
+                        <img src="img/inicial/20250423_090402.jpg" alt="Matemática" class="area-inner-img" loading="lazy">
                         <div class="area-icon-box"><i class="fas fa-calculator"></i></div>
                     </div>
                     <div class="area-info">
@@ -221,7 +235,7 @@
                 </div>
                 <div class="area-card-modern">
                     <div class="area-image">
-                        <img src="img/inicial/20250506_113448.jpg" alt="Comunicación" class="area-inner-img">
+                        <img src="img/inicial/20250506_113448.jpg" alt="Comunicación" class="area-inner-img" loading="lazy">
                         <div class="area-icon-box"><i class="fas fa-pen-nib"></i></div>
                     </div>
                     <div class="area-info">
@@ -231,7 +245,7 @@
                 </div>
                 <div class="area-card-modern">
                     <div class="area-image">
-                        <img src="img/inicial/20250506_114634.jpg" alt="Ciencia" class="area-inner-img">
+                        <img src="img/inicial/20250506_114634.jpg" alt="Ciencia" class="area-inner-img" loading="lazy">
                         <div class="area-icon-box"><i class="fas fa-microscope"></i></div>
                     </div>
                     <div class="area-info">
@@ -396,7 +410,7 @@
         <div class="container">
             <div class="infra-layout">
                 <div class="infra-image">
-                    <img src="img/photo principal.jpg" alt="Infraestructura" class="infra-prim-main">
+                    <img src="img/photo-principal.jpg" alt="Infraestructura" class="infra-prim-main">
                 </div>
                 <div class="infra-content">
                     <span class="section-tag">Nuestras Sedes</span>
@@ -463,53 +477,53 @@
         <div class="gallery-carousel-container">
             <div class="gallery-track">
                 <div class="gallery-card" data-full="img/inicial/20250415_160209.jpg">
-                    <img src="img/inicial/20250415_160209.jpg" alt="Proyecto 1">
+                    <img src="img/inicial/20250415_160209.jpg" alt="Proyecto 1" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250423_085719.jpg">
-                    <img src="img/inicial/20250423_085719.jpg" alt="Proyecto 2">
+                    <img src="img/inicial/20250423_085719.jpg" alt="Proyecto 2" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250423_090402.jpg">
-                    <img src="img/inicial/20250423_090402.jpg" alt="Proyecto 3">
+                    <img src="img/inicial/20250423_090402.jpg" alt="Proyecto 3" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250506_112626(0).jpg">
-                    <img src="img/inicial/20250506_112626(0).jpg" alt="Proyecto 4">
+                    <img src="img/inicial/20250506_112626(0).jpg" alt="Proyecto 4" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250506_113448.jpg">
-                    <img src="img/inicial/20250506_113448.jpg" alt="Proyecto 5">
+                    <img src="img/inicial/20250506_113448.jpg" alt="Proyecto 5" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250506_114634.jpg">
-                    <img src="img/inicial/20250506_114634.jpg" alt="Proyecto 6">
+                    <img src="img/inicial/20250506_114634.jpg" alt="Proyecto 6" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250902_131123.jpg">
-                    <img src="img/inicial/20250902_131123.jpg" alt="Proyecto 7">
+                    <img src="img/inicial/20250902_131123.jpg" alt="Proyecto 7" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/DSC03535.JPG">
-                    <img src="img/inicial/DSC03535.JPG" alt="Proyecto 8">
+                    <img src="img/inicial/DSC03535.JPG" alt="Proyecto 8" loading="lazy">
                 </div>
                 <!-- Clones for infinite scroll (Set 2) -->
                 <div class="gallery-card" data-full="img/inicial/20250415_160209.jpg">
-                    <img src="img/inicial/20250415_160209.jpg" alt="Proyecto 1">
+                    <img src="img/inicial/20250415_160209.jpg" alt="Proyecto 1" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250423_085719.jpg">
-                    <img src="img/inicial/20250423_085719.jpg" alt="Proyecto 2">
+                    <img src="img/inicial/20250423_085719.jpg" alt="Proyecto 2" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250423_090402.jpg">
-                    <img src="img/inicial/20250423_090402.jpg" alt="Proyecto 3">
+                    <img src="img/inicial/20250423_090402.jpg" alt="Proyecto 3" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250506_112626(0).jpg">
-                    <img src="img/inicial/20250506_112626(0).jpg" alt="Proyecto 4">
+                    <img src="img/inicial/20250506_112626(0).jpg" alt="Proyecto 4" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250506_113448.jpg">
-                    <img src="img/inicial/20250506_113448.jpg" alt="Proyecto 5">
+                    <img src="img/inicial/20250506_113448.jpg" alt="Proyecto 5" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250506_114634.jpg">
-                    <img src="img/inicial/20250506_114634.jpg" alt="Proyecto 6">
+                    <img src="img/inicial/20250506_114634.jpg" alt="Proyecto 6" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/20250902_131123.jpg">
-                    <img src="img/inicial/20250902_131123.jpg" alt="Proyecto 7">
+                    <img src="img/inicial/20250902_131123.jpg" alt="Proyecto 7" loading="lazy">
                 </div>
                 <div class="gallery-card" data-full="img/inicial/DSC03535.JPG">
-                    <img src="img/inicial/DSC03535.JPG" alt="Proyecto 8">
+                    <img src="img/inicial/DSC03535.JPG" alt="Proyecto 8" loading="lazy">
                 </div>
             </div>
         </div>
@@ -531,9 +545,9 @@
                 <h2 class="cta-title">¿Listo para formar parte de SJJ?</h2>
                 <p class="cta-text">Asegura una educación internacional para tu hijo hoy mismo.</p>
                 <div class="cta-actions">
-                    <a href="index.html#admision" class="btn btn-primary btn-large">Postular Ahora</a>
+                    <a href="index.html#admision" class="btn btn-primary btn-large">Admisión 2026</a>
                     <a href="https://wa.me/51949373659" class="btn-whatsapp-large" target="_blank"><i
-                            class="fab fa-whatsapp"></i> WhatsApp</a>
+                            class="fab fa-whatsapp"></i> Hablar por WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -546,7 +560,7 @@
                 <!-- Branding Column -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo">
+                        <img src="img/logo-principal.png" alt="Colegio San José Logo">
                     </div>
                     <p>Formando líderes con valores y excelencia académica en la ciudad de Juliaca desde 1990.</p>
                     <div class="footer-socials">
@@ -643,8 +657,8 @@
                 </div>
             </div>
         </div>
-        <button id="chatbot-trigger" class="chatbot-trigger">
-            <div class="bot-icon">🤖</div>
+        <button id="chatbot-trigger" class="chatbot-trigger" title="Asistente San José">
+            <div class="bot-icon"></div>
             <div class="chat-badge">1</div>
         </button>
     </div>
@@ -653,7 +667,7 @@
     <div id="registrationModal" class="registration-modal">
         <div class="registration-modal-content">
             <span class="close-registration-modal" id="closeRegistrationModal">&times;</span>
-            <img src="img/matrícula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
+            <img src="img/matricula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
             <a href="https://wa.me/51949373659?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
                 target="_blank" class="registration-btn">
                 <i class="fab fa-whatsapp"></i> Más información
@@ -661,7 +675,7 @@
         </div>
     </div>
 
-    <script src="Script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

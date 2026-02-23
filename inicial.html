@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nivel Inicial - Colegio San José Juliaca</title>
-    <link rel="icon" href="img/LOGO PRINCIPAL.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="icon" href="img/logo-principal.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,10 +16,12 @@
 </head>
 
 <body id="inicio" class="nivel-inicial">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     <!-- Page Preloader -->
     <div id="preloader" class="preloader">
         <div class="preloader-content">
-            <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo" class="preloader-logo">
+            <img src="img/logo-principal.png" alt="Colegio San José Logo" class="preloader-logo">
             <div class="preloader-spinner"></div>
         </div>
     </div>
@@ -51,10 +53,11 @@
                 </div>
             </div>
             <div class="top-bar-socials">
-                <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" target="_blank" title="Facebook"><i
-                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/colegiosanjosejuliaca?locale=es_LA" target="_blank"
+                    title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.tiktok.com/@colegiosanjosejuliaca1" target="_blank" title="TikTok"><i
+                        class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>
@@ -63,7 +66,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                <a href="index.html"><img src="img/logo-principal.png" alt="San José Juliaca Logo" class="logo-img"></a>
             </div>
 
             <button class="menu-toggle" id="menuToggle">
@@ -90,6 +93,17 @@
                         target="_blank">Admisión 2026</a></li>
                 <li><a href="https://www.sjj.edu.pe/intranet/login" class="nav-link btn-intranet">Intranet</a></li>
             </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav" aria-label="Navegación">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html"><i class="fas fa-home bc-icon"></i> Inicio</a></li>
+                <li><a href="propuesta-educativa.html">Niveles Académicos</a></li>
+                <li><span>Inicial</span></li>
+            </ol>
         </div>
     </nav>
 
@@ -164,7 +178,7 @@
                 <div class="infantil-card soft-blue-bg">
                     <h3>Aprendizaje Creativo</h3>
                     <p>Fomentamos la expresión artística e imaginación a través de talleres dinámicos y lúdicos.</p>
-                    <div class="card-image">
+                    <div class="card-image gallery-card" data-full="img/inicial/Aprendizaje-creatvo.jpg">
                         <img src="img/inicial/Aprendizaje-creatvo.jpg" alt="Aprendizaje Creativo">
                     </div>
                 </div>
@@ -172,14 +186,14 @@
                     <h3>Inteligencia Emocional</h3>
                     <p>Enseñamos a identificar y gestionar emociones, construyendo una base sólida de seguridad y
                         autonomía.</p>
-                    <div class="card-image">
+                    <div class="card-image gallery-card" data-full="img/inicial/Aprendizaje-emocional.jpg">
                         <img src="img/inicial/Aprendizaje-emocional.jpg" alt="Inteligencia Emocional">
                     </div>
                 </div>
                 <div class="infantil-card soft-green-bg">
                     <h3>Socialización Sana</h3>
                     <p>Promovemos la convivencia basada en valores, el respeto y la cooperación entre compañeros.</p>
-                    <div class="card-image">
+                    <div class="card-image gallery-card" data-full="img/inicial/Socialización-sana.jpg">
                         <img src="img/inicial/Socialización-sana.jpg" alt="Socialización Sana">
                     </div>
                 </div>
@@ -281,53 +295,53 @@
                 <div class="gallery-track">
                     <!-- Original items -->
                     <div class="gallery-card" data-full="img/inicial/20250415_160209.jpg">
-                        <img src="img/inicial/20250415_160209.jpg" alt="Actividad 1">
+                        <img src="img/inicial/20250415_160209.jpg" alt="Actividad 1" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250423_085719.jpg">
-                        <img src="img/inicial/20250423_085719.jpg" alt="Actividad 2">
+                        <img src="img/inicial/20250423_085719.jpg" alt="Actividad 2" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250423_090402.jpg">
-                        <img src="img/inicial/20250423_090402.jpg" alt="Actividad 3">
+                        <img src="img/inicial/20250423_090402.jpg" alt="Actividad 3" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250506_112626(0).jpg">
-                        <img src="img/inicial/20250506_112626(0).jpg" alt="Actividad 4">
+                        <img src="img/inicial/20250506_112626(0).jpg" alt="Actividad 4" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250506_113448.jpg">
-                        <img src="img/inicial/20250506_113448.jpg" alt="Actividad 5">
+                        <img src="img/inicial/20250506_113448.jpg" alt="Actividad 5" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250506_114634.jpg">
-                        <img src="img/inicial/20250506_114634.jpg" alt="Actividad 6">
+                        <img src="img/inicial/20250506_114634.jpg" alt="Actividad 6" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250902_131123.jpg">
-                        <img src="img/inicial/20250902_131123.jpg" alt="Actividad 7">
+                        <img src="img/inicial/20250902_131123.jpg" alt="Actividad 7" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/DSC03535.JPG">
-                        <img src="img/inicial/DSC03535.JPG" alt="Actividad 8">
+                        <img src="img/inicial/DSC03535.JPG" alt="Actividad 8" loading="lazy">
                     </div>
                     <!-- Clones for infinite effect (Set 2) -->
                     <div class="gallery-card" data-full="img/inicial/20250415_160209.jpg">
-                        <img src="img/inicial/20250415_160209.jpg" alt="Actividad 1">
+                        <img src="img/inicial/20250415_160209.jpg" alt="Actividad 1" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250423_085719.jpg">
-                        <img src="img/inicial/20250423_085719.jpg" alt="Actividad 2">
+                        <img src="img/inicial/20250423_085719.jpg" alt="Actividad 2" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250423_090402.jpg">
-                        <img src="img/inicial/20250423_090402.jpg" alt="Actividad 3">
+                        <img src="img/inicial/20250423_090402.jpg" alt="Actividad 3" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250506_112626(0).jpg">
-                        <img src="img/inicial/20250506_112626(0).jpg" alt="Actividad 4">
+                        <img src="img/inicial/20250506_112626(0).jpg" alt="Actividad 4" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250506_113448.jpg">
-                        <img src="img/inicial/20250506_113448.jpg" alt="Actividad 5">
+                        <img src="img/inicial/20250506_113448.jpg" alt="Actividad 5" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250506_114634.jpg">
-                        <img src="img/inicial/20250506_114634.jpg" alt="Actividad 6">
+                        <img src="img/inicial/20250506_114634.jpg" alt="Actividad 6" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/20250902_131123.jpg">
-                        <img src="img/inicial/20250902_131123.jpg" alt="Actividad 7">
+                        <img src="img/inicial/20250902_131123.jpg" alt="Actividad 7" loading="lazy">
                     </div>
                     <div class="gallery-card" data-full="img/inicial/DSC03535.JPG">
-                        <img src="img/inicial/DSC03535.JPG" alt="Actividad 8">
+                        <img src="img/inicial/DSC03535.JPG" alt="Actividad 8" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -347,8 +361,8 @@
     <section class="section infra-section gray-bg">
         <div class="container">
             <div class="infra-grid">
-                <div class="infra-img">
-                    <img src="D:\sjjdecero\img\inicial\aula.png" alt="Aula de Nivel Inicial" class="infra-main">
+                <div class="infra-img gallery-card" data-full="img/inicial/aula.png">
+                    <img src="img/inicial/aula.png" alt="Aula de Nivel Inicial" class="infra-main" loading="lazy">
                 </div>
                 <div class="infra-content">
                     <h2 class="section-title">Espacios Diseñados para Ellos</h2>
@@ -398,7 +412,7 @@
                 <h2>¿Listo para que tu hijo descubra su potencial?</h2>
                 <p>Las vacantes para el Nivel Inicial 2026 son limitadas. ¡Asegura su futuro hoy!</p>
                 <div class="cta-buttons">
-                    <a href="index.html#admision" class="btn btn-primary btn-large">Postula Ahora</a>
+                    <a href="index.html#admision" class="btn btn-primary btn-large">Admisión 2026</a>
                     <a href="https://wa.me/51949373659" class="btn btn-whatsapp-large"><i class="fab fa-whatsapp"></i>
                         Hablar con informes</a>
                 </div>
@@ -413,14 +427,15 @@
                 <!-- Branding Column -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo">
+                        <img src="img/logo-principal.png" alt="Colegio San José Logo">
                     </div>
                     <p>Formando líderes con valores y excelencia académica en la ciudad de Juliaca desde 1990.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" class="social-icon"
+                            title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/51949373659" class="social-icon" title="WhatsApp"><i
+                        <a href="https://wa.me/51949373659" class="social-icon" title="WhatsApp" target="_blank"><i
                                 class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
@@ -509,8 +524,8 @@
                 </div>
             </div>
         </div>
-        <button id="chatbot-trigger" class="chatbot-trigger">
-            <div class="bot-icon">🤖</div>
+        <button id="chatbot-trigger" class="chatbot-trigger" title="Asistente San José">
+            <div class="bot-icon"></div>
             <div class="chat-badge">1</div>
         </button>
     </div>
@@ -519,7 +534,7 @@
     <div id="registrationModal" class="registration-modal">
         <div class="registration-modal-content">
             <span class="close-registration-modal" id="closeRegistrationModal">&times;</span>
-            <img src="img/matrícula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
+            <img src="img/matricula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
             <a href="https://wa.me/51949373659?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
                 target="_blank" class="registration-btn">
                 <i class="fab fa-whatsapp"></i> Más información
@@ -527,7 +542,7 @@
         </div>
     </div>
 
-    <script src="Script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Quiénes Somos? | Colegio San José Juliaca</title>
-    <link rel="icon" href="img/LOGO PRINCIPAL.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="icon" href="img/logo-principal.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,7 +19,7 @@
     <!-- Page Preloader -->
     <div id="preloader" class="preloader">
         <div class="preloader-content">
-            <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo" class="preloader-logo">
+            <img src="img/logo-principal.png" alt="Colegio San José Logo" class="preloader-logo">
             <div class="preloader-spinner"></div>
         </div>
     </div>
@@ -53,10 +53,11 @@
                 </div>
             </div>
             <div class="top-bar-socials">
-                <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" target="_blank" title="Facebook"><i
-                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/colegiosanjosejuliaca?locale=es_LA" target="_blank"
+                    title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.tiktok.com/@colegiosanjosejuliaca1" target="_blank" title="TikTok"><i
+                        class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>
@@ -65,7 +66,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="img/LOGO PRINCIPAL.png" alt="San José Juliaca Logo" class="logo-img">
+                <a href="index.html"><img src="img/logo-principal.png" alt="San José Juliaca Logo" class="logo-img"></a>
             </div>
 
             <button class="menu-toggle" id="menuToggle">
@@ -90,14 +91,24 @@
                 <li><a href="servicios.html" class="nav-link">Servicios</a></li>
                 <li><a href="https://www.sjj.edu.pe/web/preinscripcion" class="nav-link btn-admision-cta"
                         target="_blank">Admisión 2026</a></li>
-                <li><a href="#" class="nav-link btn-intranet">Intranet</a></li>
+                <li><a href="https://www.sjj.edu.pe/intranet/login" class="nav-link btn-intranet">Intranet</a></li>
             </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav" aria-label="Navegación">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html"><i class="fas fa-home bc-icon"></i> Inicio</a></li>
+                <li><span>Quiénes Somos</span></li>
+            </ol>
         </div>
     </nav>
 
     <!-- Page Hero -->
     <header class="page-hero"
-        style="background-image: linear-gradient(rgba(10, 36, 99, 0.8), rgba(10, 36, 99, 0.8)), url('img/photo\ principal.jpg');">
+        style="background-image: linear-gradient(rgba(10, 36, 99, 0.8), rgba(10, 36, 99, 0.8)), url('img/photo-principal.jpg');">
         <div class="container">
             <h1 class="fade-in-up">Nuestra Identidad</h1>
             <p class="fade-in-up">Conoce la historia y los valores que guían nuestra labor educativa.</p>
@@ -130,7 +141,7 @@
 
             <div class="modern-card-col reveal reveal-right">
                 <div class="director-card">
-                    <div class="director-img-container">
+                    <div class="director-img-container gallery-card" data-full="img/nosotros/directora.jpg">
                         <img src="img/nosotros/directora.jpg" alt="Directora Colegio San José">
                     </div>
                     <div class="director-badge">Lic. Gloria Merma Yucra</div>
@@ -325,19 +336,19 @@
             <h2 class="partners-title">Nuestros Convenios</h2>
             <div class="partners-grid">
                 <div class="partner-logo-item">
-                    <img src="img/convenio-1.png" alt="Convenio 1" class="partner-logo">
+                    <img src="img/convenio-1.png" alt="Convenio 1" class="partner-logo" loading="lazy">
                 </div>
                 <div class="partner-logo-item">
-                    <img src="img/convenio-2.png" alt="Convenio 2" class="partner-logo">
+                    <img src="img/convenio-2.png" alt="Convenio 2" class="partner-logo" loading="lazy">
                 </div>
                 <div class="partner-logo-item">
-                    <img src="img/convenio-3.png" alt="Convenio 3" class="partner-logo">
+                    <img src="img/convenio-3.png" alt="Convenio 3" class="partner-logo" loading="lazy">
                 </div>
                 <div class="partner-logo-item">
-                    <img src="img/convenio-4.png" alt="Convenio 4" class="partner-logo">
+                    <img src="img/convenio-4.png" alt="Convenio 4" class="partner-logo" loading="lazy">
                 </div>
                 <div class="partner-logo-item">
-                    <img src="img/convenio-5.png" alt="Convenio 5" class="partner-logo">
+                    <img src="img/convenio-5.png" alt="Convenio 5" class="partner-logo" loading="lazy">
                 </div>
             </div>
         </div>
@@ -350,14 +361,15 @@
                 <!-- Branding Column -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="img/LOGO PRINCIPAL.png" alt="Colegio San José Logo">
+                        <img src="img/logo-principal.png" alt="Colegio San José Logo">
                     </div>
                     <p>Formando líderes con valores y excelencia académica en la ciudad de Juliaca desde 1990.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/ColSanJoseJuliaca/?locale=es_LA" class="social-icon"
+                            title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/51949373659" class="social-icon" title="WhatsApp"><i
+                        <a href="https://wa.me/51949373659" class="social-icon" title="WhatsApp" target="_blank"><i
                                 class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
@@ -446,8 +458,8 @@
                 </div>
             </div>
         </div>
-        <button id="chatbot-trigger" class="chatbot-trigger">
-            <div class="bot-icon">🤖</div>
+        <button id="chatbot-trigger" class="chatbot-trigger" title="Asistente San José">
+            <div class="bot-icon"></div>
             <div class="chat-badge">1</div>
         </button>
     </div>
@@ -456,7 +468,7 @@
     <div id="registrationModal" class="registration-modal">
         <div class="registration-modal-content">
             <span class="close-registration-modal" id="closeRegistrationModal">&times;</span>
-            <img src="img/matrícula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
+            <img src="img/matricula-2026.jpeg" alt="Matrícula 2026" class="registration-image">
             <a href="https://wa.me/51949373659?text=Hola,%20deseo%20más%20información%20sobre%20la%20Matrícula%202026"
                 target="_blank" class="registration-btn">
                 <i class="fab fa-whatsapp"></i> Más información
@@ -464,7 +476,7 @@
         </div>
     </div>
 
-    <script src="Script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

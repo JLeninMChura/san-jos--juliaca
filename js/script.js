@@ -51,16 +51,27 @@ class HeroSlider {
     }
 
     goToSlide(index) {
-        // Remove active class from current slide and dot
-        this.slides[this.currentSlide].classList.remove('active');
+        if (index === this.currentSlide) return;
+
+        const prevSlide = this.slides[this.currentSlide];
+        const nextSlide = this.slides[index];
         const dots = document.querySelectorAll('.slider-dot');
+
+        // Marcar el slide saliente con .leaving para su animaci�n de salida
+        prevSlide.classList.add('leaving');
+        prevSlide.classList.remove('active');
         dots[this.currentSlide].classList.remove('active');
 
-        // Update current slide
+        // Limpiar .leaving cuando termine la animaci�n (870ms = duraci�n de la transici�n)
+        setTimeout(() => {
+            prevSlide.classList.remove('leaving');
+        }, 870);
+
+        // Actualizar slide actual
         this.currentSlide = index;
 
-        // Add active class to new slide and dot
-        this.slides[this.currentSlide].classList.add('active');
+        // Activar nuevo slide y dot
+        nextSlide.classList.add('active');
         dots[this.currentSlide].classList.add('active');
 
         // Reset autoplay
@@ -136,6 +147,10 @@ class Navigation {
         this.navLinks = document.querySelectorAll('.nav-link');
 
         if (this.navbar && this.menuToggle && this.navMenu) {
+            // Mejores atributos de accesibilidad para el botón del menú
+            this.menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+            this.menuToggle.setAttribute('aria-controls', 'navMenu');
+            this.menuToggle.setAttribute('aria-expanded', 'false');
             this.init();
         }
     }
@@ -185,6 +200,8 @@ class Navigation {
     toggleMenu() {
         this.navMenu.classList.toggle('active');
         this.menuToggle.classList.toggle('active');
+        const isOpen = this.navMenu.classList.contains('active');
+        this.menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
 
     closeMenu() {
@@ -200,8 +217,14 @@ class Navigation {
             const toggle = dropdown.querySelector('.dropdown-toggle');
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 1024) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
+                    // Primer toque en móvil: solo despliega el submenú
+                    if (!dropdown.classList.contains('active')) {
+                        e.preventDefault();
+                        dropdown.classList.add('active');
+                        return;
+                    }
+                    // Segundo toque: dejamos que navegue al enlace destino
+                    // (no hacemos preventDefault aquí)
                 }
             });
         });
@@ -313,7 +336,7 @@ class StatsCounter {
 class FormHandler {
     constructor() {
         this.form = document.getElementById('contactForm');
-        this.whatsappNumber = '51949373659'; // Número del colegio
+        this.whatsappNumber = '51949373659'; // N�mero del colegio
 
         if (this.form) {
             this.init();
@@ -334,13 +357,13 @@ class FormHandler {
         const mensajeExtra = this.form.querySelector('[name="mensaje"]').value.trim();
 
         const mensaje =
-            `🏫 *Solicitud de Información - Colegio San José Juliaca*\n\n` +
-            `👤 *Apoderado:* ${nombre}\n` +
-            `📞 *Teléfono:* ${telefono}\n` +
-            `🎒 *Alumno:* ${alumno}\n` +
-            `📚 *Nivel de interés:* ${nivel}\n` +
-            (mensajeExtra ? `💬 *Mensaje:* ${mensajeExtra}\n` : '') +
-            `\n_Enviado desde el sitio web del Colegio San José Juliaca._`;
+            `?? *Solicitud de Informaci�n - Colegio San Jos� Juliaca*\n\n` +
+            `?? *Apoderado:* ${nombre}\n` +
+            `?? *Tel�fono:* ${telefono}\n` +
+            `?? *Alumno:* ${alumno}\n` +
+            `?? *Nivel de inter�s:* ${nivel}\n` +
+            (mensajeExtra ? `?? *Mensaje:* ${mensajeExtra}\n` : '') +
+            `\n_Enviado desde el sitio web del Colegio San Jos� Juliaca._`;
 
         const url = `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
 
@@ -352,7 +375,7 @@ class FormHandler {
         setTimeout(() => {
             window.open(url, '_blank');
             this.form.reset();
-            submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> ✓ ¡Listo!';
+            submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> ? �Listo!';
             submitBtn.style.background = 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)';
 
             setTimeout(() => {
@@ -474,29 +497,29 @@ const debounce = (func, wait) => {
 // ========================================
 const hymnData = {
     colegio: {
-        title: "HIMNO AL COLEGIO SAN JOSÉ JULIACA",
+        title: "HIMNO AL COLEGIO SAN JOS� JULIACA",
         sections: [
             {
                 type: "stanza",
-                text: "En la perla del altiplano,\nHuaynaroque y ciudad de los vientos.\nEntonemos a nuestro colegio,\nQue enciende las luces de eterna lección."
+                text: "En la perla del altiplano,\nHuaynaroque y ciudad de los vientos.\nEntonemos a nuestro colegio,\nQue enciende las luces de eterna lecci�n."
             },
             {
                 type: "chorus",
                 label: "CORO:",
-                text: "San José Juliaca es el mejor,\nFormación integral y valores.\nEnseñando con sabiduría,\nCon ejemplo y laboriosidad.\n\nSan José Juliaca es innovación,\nCultivando aprendizaje y ciencia.\nEnseñando con sabiduría,\nCon ejemplo y la verdad."
+                text: "San Jos� Juliaca es el mejor,\nFormaci�n integral y valores.\nEnse�ando con sabidur�a,\nCon ejemplo y laboriosidad.\n\nSan Jos� Juliaca es innovaci�n,\nCultivando aprendizaje y ciencia.\nEnse�ando con sabidur�a,\nCon ejemplo y la verdad."
             },
             {
                 type: "stanza",
                 label: "CODA:",
-                text: "Enseñando con sabiduría,\nCon ejemplo y la verdad."
+                text: "Ense�ando con sabidur�a,\nCon ejemplo y la verdad."
             }
         ],
-        authors: "Letra y música:\nJulio César LEONARDOTURPO"
+        authors: "Letra y m�sica:\nJulio C�sar LEONARDOTURPO"
     },
     juliaca: {
         title: "Himno de Juliaca",
         chorus: "CORO",
-        chorusText: "¡Oh! ciudad de los vientos, Juliaca,\nde los andes hermoso balcón,\nen tus manos la patria destaca,\ncomo un límpido y gran corazón.",
+        chorusText: "�Oh! ciudad de los vientos, Juliaca,\nde los andes hermoso balc�n,\nen tus manos la patria destaca,\ncomo un l�mpido y gran coraz�n.",
         stanzas: [
             {
                 num: "I",
@@ -504,10 +527,10 @@ const hymnData = {
             },
             {
                 num: "II",
-                text: "En tus pampas de sol y de frío\nel progreso levanta su altar,\ny en tus calles el noble gentío\ncanta un himno de fe sin igual.\nEres libre, Juliaca, y pujante\ncon el ritmo de tu actividad,\ntu camino es un reto vibrante\nde justicia, de paz y verdad."
+                text: "En tus pampas de sol y de fr�o\nel progreso levanta su altar,\ny en tus calles el noble gent�o\ncanta un himno de fe sin igual.\nEres libre, Juliaca, y pujante\ncon el ritmo de tu actividad,\ntu camino es un reto vibrante\nde justicia, de paz y verdad."
             }
         ],
-        authors: "Letra: Luis Rodríguez Ortiz<br>Música: Jorge Rivera del Mar"
+        authors: "Letra: Luis Rodr�guez Ortiz<br>M�sica: Jorge Rivera del Mar"
     }
 };
 
@@ -587,9 +610,9 @@ class ChatbotAssistant {
         this.badge = this.container.querySelector('.chat-badge');
 
         this.faqData = {
-            admision: "¡Hola! El proceso de **Admisión 2026** ya está disponible. Contamos con vacantes para Inicial, Primaria y Secundaria. ¿Te gustaría agendar una visita o ver los requisitos?",
-            niveles: "En el San José Juliaca ofrecemos una formación integral en **Inicial**, **Primaria** y **Secundaria**, con talleres de robótica, música y deportes.",
-            ubicacion: "Nuesto colegio está ubicado en la ciudad de **Juliaca**. Atendemos consultas presenciales de lunes a viernes de 8:00 AM a 1:00 PM."
+            admision: "�Hola! El proceso de **Admisi�n 2026** ya est� disponible. Contamos con vacantes para Inicial, Primaria y Secundaria. �Te gustar�a agendar una visita o ver los requisitos?",
+            niveles: "En el San Jos� Juliaca ofrecemos una formaci�n integral en **Inicial**, **Primaria** y **Secundaria**, con talleres de rob�tica, m�sica y deportes.",
+            ubicacion: "Nuesto colegio est� ubicado en la ciudad de **Juliaca**. Atendemos consultas presenciales de lunes a viernes de 8:00 AM a 1:00 PM."
         };
 
         this.init();
@@ -660,10 +683,25 @@ class RegistrationModal {
     init() {
         // Show modal on page load
         window.addEventListener('load', () => {
-            // Small delay for better visual presentation
-            setTimeout(() => {
-                this.openModal();
-            }, 1200);
+            // Solo mostrar una vez por sesión (mejora UX)
+            try {
+                const seenKey = 'sj_registration_modal_seen';
+                const hasSeen = window.sessionStorage && sessionStorage.getItem(seenKey);
+
+                if (!hasSeen) {
+                    setTimeout(() => {
+                        this.openModal();
+                        if (window.sessionStorage) {
+                            sessionStorage.setItem(seenKey, '1');
+                        }
+                    }, 1200);
+                }
+            } catch (e) {
+                // Fallback seguro si sessionStorage no está disponible
+                setTimeout(() => {
+                    this.openModal();
+                }, 1200);
+            }
         });
 
         // Close button functionality
@@ -951,11 +989,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Console styling
     console.log(
-        '%c¡Bienvenido a Tu Colegio! 🎓',
+        '%c�Bienvenido a Tu Colegio! ??',
         'color: #0A2463; font-size: 20px; font-weight: bold; padding: 10px;'
     );
     console.log(
-        '%cSitio web desarrollado con las últimas tecnologías web',
+        '%cSitio web desarrollado con las �ltimas tecnolog�as web',
         'color: #D62828; font-size: 12px;'
     );
 });
@@ -968,7 +1006,7 @@ window.addEventListener('load', () => {
     if ('performance' in window) {
         const perfData = window.performance.timing;
         const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`⚡ Página cargada en ${pageLoadTime}ms`);
+        console.log(`? P�gina cargada en ${pageLoadTime}ms`);
     }
 
     // Remove loading states
@@ -1026,3 +1064,21 @@ const Utils = {
 
 // Export utilities to global scope
 window.Utils = Utils;
+
+// ========================================
+// SCROLL PROGRESS BAR
+// ========================================
+(function initScrollProgressBar() {
+    const bar = document.getElementById('scrollProgressBar');
+    if (!bar) return;
+
+    function updateScrollBar() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        bar.style.width = progress + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollBar, { passive: true });
+    updateScrollBar(); // Initialize on load
+})();
